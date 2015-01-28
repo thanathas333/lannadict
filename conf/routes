@@ -3,16 +3,21 @@
 # ~~~~
 
 # Home page
-GET        /                    controllers.Application.home()
-GET        /login               controllers.Application.login()
-GET        /about               controllers.Application.about()
-GET        /search              controllers.Application.search()
-GET        /add                 controllers.Application.add()
-GET        /register            controllers.Application.register()
+GET         /                    controllers.Application.home()
+GET         /login               controllers.Application.login()
+GET         /about               controllers.Application.about()
+GET         /search              controllers.Application.search()
+GET         /add                 controllers.Application.add()
+GET         /register            controllers.Application.register()
 
 # Map static resources from the /public folder to the /assets URL path
-GET        /assets/*file        controllers.Assets.at(path="/public", file)
+GET         /assets/*file        controllers.Assets.at(path="/public", file)
 
 
-#new page
+#Compute Data
+POST        /search              controllers.Application.postSearch()
+POST        /word-add            controllers.Application.postWordAdd()
+GET         /get-words           controllers.Application.getAllWords()
+
+
 

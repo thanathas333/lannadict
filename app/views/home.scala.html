@@ -1,27 +1,51 @@
 @layout() {
 
+    <div ng-app="SearchApp" ng-controller="SearchCtrl">
 
-<li class="span6">
-  <div class="thumbnail">
-    <img src="@routes.Assets.at("bootstrap-3.3.2-dist/img/2.jpg") " alt="">
-  </div>
-</li>
-  <p>
+    <div class="thumbnail">
+        <img src="@routes.Assets.at("bootstrap-3.3.2-dist/img/2.jpg") " alt="">
+    </div>
 
-<form class="form-horizontal">
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputAmount">search</label>
-    <div class="input-group">
-      <div class="input-group-addon">ค้นหา</div>
-      <input type="text" class="form-control" id="exampleInputAmount" placeholder="search ... ">
-      <span class="input-group-btn">
-        <button class="btn btn-primary" type="button"> Search </button>
-      </span>
-  </div>
-</form>
+    <form class="form-horizontal" method="post" ng-submit="submitForm()">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputAmount">search</label>
+            <div class="input-group">
+                <div class="input-group-addon">ค้นหา</div>
+                <input type="text" class="form-control" id="search" ng-model="search.search" placeholder="search ... ">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button"> Search </button>
+                </span>
+            </div>
+    </form>
 
-  </p>
+        <p>
+            {{search.text}}
+        </p>
+
+    </div>
 
 
+}{
+    <script type="text/javascript">
+    var app = angular.module("SearchApp",[]);
+        app.controller('SearchCtrl',function($scope,$http){
+            console.log("SearchCtrl...");
+
+            $scope.search = {
+            };
+
+            $scope.submitForm = function(){
+                console.log("submit...");
+
+                $http({
+                    url : "/search",
+                    method : 'post',
+                    data : $scope.search
+                } ).success(function(response){
+                    $scope.search = response;
+                })
+            }
+        });
+    </script>
 }
 

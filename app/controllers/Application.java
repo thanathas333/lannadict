@@ -1,9 +1,16 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import models.Word;
 import play.*;
 import play.mvc.*;
+import play.libs.Json;
+
 
 import views.html.*;
+
+import java.util.List;
+import java.util.Map;
 
 public class Application extends Controller {
 
@@ -27,4 +34,38 @@ public class Application extends Controller {
         return ok (register.render());
     }
 
+    public static Result postSearch(){
+
+        JsonNode json = request().body().asJson();
+
+        class res {
+            public String search;
+        }
+
+        res r = new res();
+        r.search = "HELLO WORLD";
+
+        return ok(Json.toJson(r));
+    }
+
+    public static Result getAllWords(){
+        List<Word> words = Word.finder.all();
+        return ok(Json.toJson(words));
+    }
+
+    public static Result postWordAdd(){
+        JsonNode json = request().body().asJson();
+        Word word = Json.fromJson(json,Word.class);
+
+        word.save();
+
+        return ok(Json.toJson(word));
+    }
+
 }
+
+
+
+
+
+

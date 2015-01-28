@@ -1,4 +1,4 @@
-@()(content:Html)
+@()(content:Html)(javascript:Html)
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -77,5 +77,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="@routes.Assets.at("bootstrap-3.3.2-dist/js/bootstrap.min.js")"></script>
+    <script src="@routes.Assets.at("bower_components/angular/angular.min.js")"></script>
+
+    @javascript
   </body>
 </html>

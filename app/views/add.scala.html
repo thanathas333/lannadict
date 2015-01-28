@@ -1,32 +1,74 @@
-@layout(){
-  <h1>ป้อนคำศัพท์ใหม่ ( Augmernt Vocabulary )</h1>
+@layout() {
 
-  <form class="form-horizontal">
-    <div class="control-group">
-      <label class="control-label" for="inputlanna">ภาษาล้านนา</label>
-      <div class="controls">
-        <input type="lanna" id="inputlanna" placeholder="Lanna">
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="inputthai">ภาษาไทย</label>
-      <div class="controls">
-        <input type="thai" id="inputthai" placeholder="Thai">
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="inputlink">ลิงค์</label>
-      <div class="controls">
-        <input type="link" id="inputlink" placeholder="Link">
-      </div>
-    </div>
-    <p>
-    <div class="control-group">
-      <div class="controls">
-        <button type="submit" class="btn">Sign in</button
-      </div>
-    </div>
-    </p>
-  </form>
+    <div ng-app="WordAddApp" ng-controller="WordAddCtrl">
+        <h1>ป้อนคำศัพท์ใหม่ ( Augmernt Vocabulary )</h1>
 
+        <form class="form-horizontal" ng-submit="submitForm()">
+            <div class="control-group">
+                <label class="control-label" for="inputlanna">ภาษาล้านนา</label>
+                <div class="controls">
+                    <input ng-model="word.lanna" type="lanna" id="inputlanna" placeholder="Lanna">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputthai">ภาษาไทย</label>
+                <div class="controls">
+                    <input ng-model="word.thai" type="thai" id="inputthai" placeholder="Thai">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputlink">ลิงค์</label>
+                <div class="controls">
+                    <input ng-model="word.link" type="link" id="inputlink" placeholder="Link">
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn">Sign in</button
+                </div>
+            </div>
+        </form>
+
+        <ul>
+            <li ng-repeat="word in words">{{word.thai}} {{word.link}} {{word.name}}</li>
+        </ul>
+
+    </div>
+} {
+    <script type="text/javascript">
+    var app = angular.module ( "WordAddApp", [ ] ) ;
+
+    app.controller ( 'WordAddCtrl', function ( $scope, $http ) {
+
+        console.log ( "WordAddCtrl..." ) ;
+
+        $scope.word = {}
+
+        $scope.words = []
+
+        $http({
+            url : '/get-words',
+            method : 'get'
+        }).success(function(response){
+            console.log(response)
+            $scope.words = response;
+        })
+
+
+    $scope.submitForm = function(){
+            $http({
+                url : '/word-add',
+                method : 'post',
+                data : $scope.word
+            } ).success(function(response){
+                console.log(response)
+                $scope.words.push(response);
+            } )
+        }
+
+
+
+    } ) ;
+    </script>
 }
