@@ -9,6 +9,7 @@ GET         /about               controllers.Application.about()
 GET         /search              controllers.Application.search()
 GET         /add                 controllers.Application.add()
 GET         /register            controllers.Application.register()
+GET         /admin               controllers.Application.admin()
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file        controllers.Assets.at(path="/public", file)
@@ -18,6 +19,9 @@ GET         /assets/*file        controllers.Assets.at(path="/public", file)
 POST        /search              controllers.Application.postSearch()
 POST        /word-add            controllers.Application.postWordAdd()
 GET         /get-words           controllers.Application.getAllWords()
+POST        /user-add            controllers.Application.postUserAdd()
+GET         /get-users           controllers.Application.getAllUsers()
+
 
 
 
