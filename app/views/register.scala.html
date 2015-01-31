@@ -52,8 +52,43 @@
       </div>
     </div>
     </p>
+    <ul>
+      <li ng-repeat="user in users">{{user.username}} {{user.password}} {{user.name}} {{user.surname}} {{user.address}} {{user.tel}} {{user.email}}</li>
+    </ul>
 
   </form>
 }{
+  <script type="text/javascript">
+  var app = angular.module ( "UserAddApp", [ ] ) ;
+
+      app.controller ( 'UserAddCtrl', function ( $scope, $http ) {
+
+          console.log ( "UserAddCtrl..." ) ;
+
+                  $scope.user = {}
+
+                  $scope.users = []
+
+                  $http({
+                      url : '/get-users',
+                      method : 'get'
+                  }).success(function(response){
+                      console.log(response)
+                      $scope.users = response;
+                  })
+  $scope.submitForm = function(){
+          $http({
+              url : '/user-add',
+              method : 'post',
+              data : $scope.user
+          } ).success(function(response){
+              console.log(response)
+              $scope.users.push(response);
+          } )
+      }
+
+
+   } ) ;
+   </script>
   
 }
