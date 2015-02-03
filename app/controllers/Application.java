@@ -37,6 +37,9 @@ public class Application extends Controller {
     public static Result admin() {
         return ok (admin.render());
     }
+    public static Result admins() {
+        return ok (admins.render());
+    }
 
     public static Result postSearch(){
 
