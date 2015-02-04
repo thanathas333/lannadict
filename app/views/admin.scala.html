@@ -1,31 +1,49 @@
-@layouted(){
-  <center><h1> Admin Control </h1></center>
+@layouted() {
+    <div ng-app="AdminApp">
+    <h1> Admin Control </h1>
 
-  <div class="panel panel-default">
-      <!-- Default panel contents -->
-    <div class="panel-heading">User Control</div>
+    <div class="panel panel-default" ng-controller="ListCtrl">
+            <!-- Default panel contents -->
+        <div class="panel-heading">User Control</div>
 
-      <!-- Table -->
-  <table class="table table-striped">
-    <tr>
-      <th>#</th>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Name</th>
-      <th>Surname</th>
-      <th>Adress</th>
-      <th>Tel</th>
-      <th>E-mail</th>
-      <th>control</th>
-    </tr>
-  </table>
-  </div>
+            <!-- Table -->
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Adress</th>
+                <th>Tel</th>
+                <th>E-mail</th>
+                <th>control</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="user in users">
+                <td>{{user.id}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.surname}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.id}}</td>
+                <td>control</td>
+            </tr>
+            <tbody>
 
-  <p>
-    <div class="controls">
-        <a href="@routes.Application.admins()"> ไปหน้าควบคุมคำศัพท์ </a>
+            </tbody>
+        </table>
     </div>
-  </p>
-}{
 
+    <div class="row">
+        <div class="controls">
+            <a href="@routes.Application.admins()"> ไปหน้าควบคุมคำศัพท์ </a>
+        </div>
+    </div>
+    </div>
+} {
+    <script type="text/javascript" src="@routes.Assets.at("app/admin/AdminApp.js")"></script>
 }
