@@ -17,11 +17,11 @@ GET         /assets/*file        controllers.Assets.at(path="/public", file)
 
 
 #Compute Data
-POST        /search              controllers.Application.postSearch()
-POST        /word-add            controllers.Application.postWordAdd()
-GET         /get-words           controllers.Application.getAllWords()
-POST        /user-add            controllers.Application.postUserAdd()
-GET         /get-users           controllers.Application.getAllUsers()
+POST        /search              controllers.sch.postSearch()
+POST        /word-add            controllers.word.postWordAdd()
+GET         /get-words           controllers.word.getAllWords()
+POST        /user-add            controllers.user.postUserAdd()
+GET         /get-users           controllers.user.getAllUsers()
 
 
 
