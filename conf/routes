@@ -12,6 +12,8 @@ GET         /register            controllers.Application.register()
 GET         /admin               controllers.Application.admin()
 GET         /admins              controllers.Application.admins()
 GET         /adminaudit          controllers.Application.adminaudit()
+GET         /delete              controllers.Application.delete()
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file        controllers.Assets.at(path="/public", file)
@@ -23,6 +25,7 @@ POST        /word-add            controllers.word.postWordAdd()
 GET         /get-words           controllers.word.getAllWords()
 POST        /user-add            controllers.user.postUserAdd()
 GET         /get-users           controllers.user.getAllUsers()
+POST        /user-delete         controllers.user.postUserAdd()
 
 
 

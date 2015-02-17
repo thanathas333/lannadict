@@ -1,0 +1,38 @@
+{
+<script type="text/javascript">
+var app = angular.module ( "WordDeleteApp", [ ] ) ;
+
+app.controller ( 'WordDeleteCtrl', function ( $scope, $http ) {
+
+console.log ( "WordDeleteCtrl..." ) ;
+
+$scope.word = {}
+
+$scope.words = []
+
+$http({
+url : '/post-words',
+method : 'post'
+}).success(function(response){
+console.log(response)
+$scope.words = response;
+})
+
+
+$scope.submitForm = function(){
+$http({
+url : '/word-delete',
+method : 'get',
+data : $scope.word
+} ).success(function(response){
+console.log(response)
+$scope.words.push(response);
+} )
+}
+
+
+
+} ) ;
+</script>
+
+}
