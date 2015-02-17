@@ -43,6 +43,12 @@ public class Application extends Controller {
     public static Result adminaudit() {
         return ok (adminaudit.render());
     }
+    public static Result terminologyaudit() {
+        return ok (terminologyaudit.render());
+    }
+    public static Result terminologyadd() {
+        return ok (terminologyadd.render());
+    }
 
 }
 

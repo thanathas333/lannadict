@@ -1,4 +1,4 @@
-@layoutadmin() {
+@layoutterminology() {
     <div ng-app="AdminApp">
     <h1> Admin Control </h1>
 
@@ -9,17 +9,17 @@
             <!-- Table -->
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th>#</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Name</th>
-                <th>Surname</th>
-                <th>Adress</th>
-                <th>Tel</th>
-                <th>E-mail</th>
-                <th>Control</th>
-            </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Adress</th>
+                    <th>Tel</th>
+                    <th>E-mail</th>
+                    <th>Control</th>
+                </tr>
             </thead>
             <tr ng-repeat="user in users">
                 <td>{{user.id}}</td>
@@ -32,19 +32,9 @@
                 <td>{{user.email}}</td>
                 <td>
 
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                            ยอมรับ
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                            ไม่ยอมรับ
-                        </label>
-                        <button type="submit" class="btn btn-default">Save</button>
-                    </div>
+
+                    <button type="submit" class="btn btn-default">Save</button>
+                    <button type="submit" class="btn btn-default">Delete</button>
 
 
                 </td>
