@@ -40,6 +40,9 @@ public class Application extends Controller {
     public static Result admins() {
         return ok (admins.render());
     }
+    public static Result adminaudit() {
+        return ok (adminaudit.render());
+    }
 
 }
 
