@@ -28,7 +28,7 @@
 }{
     <script type="text/javascript">
     var app = angular.module("SearchApp",[]);
-        app.controller('SearchCtrl',function($scope,$http){
+        app.controller('SearchCtrl',function($scope,$http,$location){
             console.log("SearchCtrl...");
 
             $scope.search = {
@@ -43,6 +43,7 @@
                     data : $scope.search
                 } ).success(function(response){
                     $scope.search = response;
+                    window.location = '/search';
                 })
             }
         });
