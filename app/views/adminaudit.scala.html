@@ -12,17 +12,25 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Lanna</th>
-                    <th>Thai</th>
-                    <th>Link</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Adress</th>
+                    <th>Tel</th>
+                    <th>E-mail</th>
                     <th>Control</th>
                 </tr>
             </thead>
-            <tr ng-repeat="word in words">
-                <td>{{word.id}}</td>
-                <td>{{word.lanna}}</td>
-                <td>{{word.thai}}</td>
-                <td>{{word.link}}</td>
+            <tr ng-repeat="user in users">
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.password}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.surname}}</td>
+                <td>{{user.adress}}</td>
+                <td>{{user.tel}}</td>
+                <td>{{user.email}}</td>
                 <td>
 
                     <div class="radio">
