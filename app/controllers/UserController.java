@@ -1,8 +1,7 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import models.User;
-import models.Word;
+import models.*;
 import play.*;
 import play.mvc.*;
 import play.libs.Json;
@@ -13,7 +12,7 @@ import views.html.*;
 import java.util.List;
 import java.util.Map;
 
-public class user extends Controller {
+public class UserController extends Controller {
 
     public static Result getAllUsers(){
         List<User> users = User.finder.all();
