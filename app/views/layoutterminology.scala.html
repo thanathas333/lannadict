@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>Lanna Dictionary Electronic Management System</title>
 
       <!-- Bootstrap -->
     <link href="@routes.Assets.at("bootstrap-3.3.2-dist/css/bootstrap.min.css")" rel="stylesheet">
@@ -40,38 +40,41 @@
             <li><a href="@routes.Application.about()">About</a></li>
 
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-1">
-        </div>
-        <div class="col-lg-10">
-            	<h1> </h1>
-        </div>
-        <div class="col-lg-1">
-        </div>
-      </div>
-        <div class="row">
-        <div class="col-lg-1">
-        </div>
-        <div class="col-lg-10">
-            	 @content
-        </div>
-        <div class="col-lg-1">
-        </div>
-        </div>
-          <div class="row">
-        <div class="col-lg-1">
-        </div>
-        <div class="col-lg-10">
-        </div>
-        <div class="col-lg-1">
-        </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3">
+              </div>
+              <div class="col-lg-9">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+              </div>
+              <div class="col-lg-9">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="list-group">
+                  <a href="#" class="list-group-item active">
+                    รายการ
+                  </a>
+                  <a href="/terminologyaudit" class="list-group-item">ตรวจสอบคำขอของสมาชิก</a>
+                  <a href="/terminologyadd" class="list-group-item">เพิ่ม ลบ แก้ไขคำศํพท์</a>
+                </div>
+              </div>
+              <div class="col-lg-9">
+              @content
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3">
+              </div>
+              <div class="col-lg-9">
+              </div>
+            </div>
           </div>
-      </div>
-    </div>
+        </div>
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->

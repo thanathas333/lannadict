@@ -3,29 +3,29 @@
 # ~~~~
 
 # Home page
-GET         /                    controllers.Application.home()
-GET         /login               controllers.Application.login()
-GET         /about               controllers.Application.about()
-GET         /search              controllers.Application.search()
-GET         /add                 controllers.Application.add()
-GET         /register            controllers.Application.register()
-GET         /admin               controllers.Application.admin()
-GET         /admins              controllers.Application.admins()
-GET         /adminaudit          controllers.Application.adminaudit()
-GET         /delete              controllers.Application.delete()
 
+GET         /                        controllers.Application.home()
+GET         /login                   controllers.Application.login()
+GET         /about                   controllers.Application.about()
+GET         /search                  controllers.Application.search()
+GET         /add                     controllers.Application.add()
+GET         /register                controllers.Application.register()
+GET         /admin                   controllers.Application.admin()
+GET         /admins                  controllers.Application.admins()
+GET         /adminaudit              controllers.Application.adminaudit()
+GET         /terminologyaudit        controllers.Application.terminologyaudit()
+GET         /terminologyadd          controllers.Application.terminologyadd()
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file        controllers.Assets.at(path="/public", file)
-
+GET         /assets/*file            controllers.Assets.at(path="/public", file)
 
 #Compute Data
-POST        /search              controllers.sch.postSearch()
-POST        /word-add            controllers.word.postWordAdd()
-GET         /get-words           controllers.word.getAllWords()
-POST        /user-add            controllers.user.postUserAdd()
-GET         /get-users           controllers.user.getAllUsers()
-POST        /user-delete         controllers.user.postUserAdd()
+
+POST        /search                  controllers.sch.postSearch()
+POST        /word-add                controllers.word.postWordAdd()
+GET         /get-words               controllers.word.getAllWords()
+POST        /user-add                controllers.user.postUserAdd()
+GET         /get-users               controllers.user.getAllUsers()
 
 
 
