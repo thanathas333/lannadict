@@ -34,38 +34,24 @@
     </div>
 } {
     <script type="text/javascript">
-    var app = angular.module ( "WordAddApp", [ ] ) ;
 
-    app.controller ( 'WordAddCtrl', function ( $scope, $http ) {
+        var app = angular.module("WordAddApp",[ ] ) ;
 
-        console.log ( "WordAddCtrl..." ) ;
+        app.controller( 'WordAddCtrl', function ( $scope, $http ,$location ) {
+         $scope.word = { };
 
-        $scope.word = {}
-
-        $scope.words = []
-
-        $http({
-            url : '/get-words',
-            method : 'get'
-        }).success(function(response){
-            console.log(response)
-            $scope.words = response;
-        })
-
-
-    $scope.submitForm = function(){
-            $http({
+            $scope.submitForm = function ( ) {
+            $http ( {
                 url : '/word-add',
                 method : 'post',
                 data : $scope.word
-            } ).success(function(response){
-                console.log(response)
-                $scope.words.push(response);
+            } ).success ( function ( response ) {
+                 window.location = '/';
+
             } )
-        }
 
-
-
-    } ) ;
+     }
+     } ) ;
     </script>
+
 }
