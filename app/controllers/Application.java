@@ -48,7 +48,11 @@ public class Application extends Controller {
         return ok (terminologyaudit.render());
     }
     public static Result terminologyadd() {
-        return ok (terminologyadd.render());
+        return ok(terminologyadd.render());
+
+    }
+    public static Result editto() {
+        return ok (editto.render());
 
     }
 

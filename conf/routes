@@ -15,6 +15,12 @@ GET         /admins                  controllers.Application.admins()
 GET         /adminaudit              controllers.Application.adminaudit()
 GET         /terminologyaudit        controllers.Application.terminologyaudit()
 GET         /terminologyadd          controllers.Application.terminologyadd()
+GET         /admin/editto            controllers.Application.editto()
+
+#Word
+GET         /api/word/all            controllers.WordController.getAllWords()
+POST        /api/word/save           controllers.WordController.postWordAdd()
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file            controllers.Assets.at(path="/public", file)

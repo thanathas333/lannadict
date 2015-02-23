@@ -1,0 +1,40 @@
+@layouts() {
+
+    <div ng-app="WordEdit" ng-controller="WordEditCtrl">
+        <h2>แก้ไขคำศัพท์</h2>
+
+        <form class="form-horizontal" ng-submit="editSave()">
+            <div class="control-group">
+                <label class="control-label" for="inputlanna">ภาษาล้านนา</label>
+                <div class="controls">
+                    <input ng-model="editword.lanna" type="lanna" id="inputlanna" placeholder="Lanna">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputthai">ภาษาไทย</label>
+                <div class="controls">
+                    <input ng-model="editword.thai" type="thai" id="inputthai" placeholder="Thai">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputlink">ลิงค์</label>
+                <div class="controls">
+                    <input ng-model="editword.link" type="link" id="inputlink" placeholder="Link">
+                </div>
+            </div>
+            <p>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-open"></i>  Submit </button>
+                </div>
+            </div>
+            </p>
+        </form>
+
+    </div>
+} {
+
+    <script type="text/javascript" src="@routes.Assets.at("app/admin/WordApp.js")"></script>
+
+
+}
