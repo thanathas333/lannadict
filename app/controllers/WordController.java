@@ -32,4 +32,12 @@ public class WordController extends Controller{
         return ok(Json.toJson(word));
     }
 
+    public static Result postDelete(){
+        JsonNode json = request().body().asJson();
+        models.Word word = Json.fromJson(json, models.Word.class);
+
+        word.delete();
+        return ok(Json.toJson(word));
+    }
+
 }

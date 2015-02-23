@@ -23,9 +23,8 @@ app.controller ( 'WordCtrl', function ( $scope, $http ) {
 
     $scope.save(function(){
         $http ({
-            url : '/word-add',
-            method : 'post',
-            header : 'application/json',
+            url : "/word-add",
+            method : "post",
             data : $scope.word
         }).success(function(response){
             $scope.words.push(response)
@@ -41,9 +40,8 @@ app.controller ( 'WordCtrl', function ( $scope, $http ) {
 
     $scope.editSave=function{
         $http({
-            url : '/word-add',
-            method : 'post',
-            header : 'application/json',
+            url : "/word-add",
+            method : "post",
             data : $scope.editWord
         }).success(function(response){
             console.log(response);
@@ -62,5 +60,15 @@ app.controller ( 'WordCtrl', function ( $scope, $http ) {
         })
 
     }
+
+    $scope.delete(function(word){
+
+        var admins = $scope.words.adminsOf(word);
+
+        if (confirm(" คุณแน่ใจว่าจะลบ คำศัพท์คำนี้ ("+word.id+") ?")){
+
+        }
+
+    })
 
 } ) ;
