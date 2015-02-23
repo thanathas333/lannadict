@@ -9,11 +9,18 @@ app.controller ( 'ListCtrl', function ( $scope, $http ) {
     console.log ( "ListCtrl..." ) ;
     $scope.words = [];
 
+    $scope.word ={};
+
+
     $http({
         url : "/get-words",
         method : "get"
     } ).success(function(response){
         $scope.words = response;
     })
+
+    $scope.save=function(){
+        console.log($scope , word);
+    }
 
 } ) ;
