@@ -18,6 +18,8 @@ GET         /terminologyadd          controllers.Application.terminologyadd()
 #Word
 GET         /api/word/all            controllers.WordController.getAllWords
 POST        /api/word/save           controllers.WordController.postWordAdd()
+POST        /api/word/delete         controllers.WordController.postDelete()
+
 
 
 # Map static resources from the /public folder to the /assets URL path

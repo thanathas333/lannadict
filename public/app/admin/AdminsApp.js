@@ -65,7 +65,16 @@ app.controller ( 'WordCtrl', function ( $scope, $http ) {
 
         var admins = $scope.words.adminsOf(word);
 
-        if (confirm(" คุณแน่ใจว่าจะลบ คำศัพท์คำนี้ ("+word.id+") ?")){
+        if (confirm(" คุณแน่ใจว่าจะลบ คำศัพท์คำนี้ ("+word.id+") ?"))
+
+            $http({
+                url : "/api/word/delete",
+                method : "post",
+                data : word
+            }).success(function(response){
+                $scope.words.splice(admins,1);
+
+                )}
 
         }
 
