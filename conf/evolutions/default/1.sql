@@ -3,49 +3,6 @@
 
 # --- !Ups
 
-create table comment (
-  id                        bigint auto_increment not null,
-  comment                   varchar(255),
-  petition_id               varchar(255),
-  petition_status_id        varchar(255),
-  user_id                   varchar(255),
-  constraint pk_comment primary key (id))
-;
-
-create table petition (
-  id                        bigint auto_increment not null,
-  lanna                     varchar(255),
-  thai                      varchar(255),
-  link                      varchar(255),
-  status_id                 varchar(255),
-  user_id                   varchar(255),
-  constraint pk_petition primary key (id))
-;
-
-create table role (
-  id                        bigint auto_increment not null,
-  thai                      varchar(255),
-  lanna                     varchar(255),
-  link                      varchar(255),
-  constraint pk_role primary key (id))
-;
-
-create table status (
-  id                        bigint auto_increment not null,
-  name                      varchar(255),
-  description               varchar(255),
-  constraint pk_status primary key (id))
-;
-
-create table terminology (
-  id                        bigint auto_increment not null,
-  thai                      varchar(255),
-  lanna                     varchar(255),
-  link                      varchar(255),
-  user_id                   varchar(255),
-  constraint pk_terminology primary key (id))
-;
-
 create table user (
   id                        bigint auto_increment not null,
   username                  varchar(255),
@@ -72,16 +29,6 @@ create table word (
 # --- !Downs
 
 SET FOREIGN_KEY_CHECKS=0;
-
-drop table comment;
-
-drop table petition;
-
-drop table role;
-
-drop table status;
-
-drop table terminology;
 
 drop table user;
 

@@ -22,11 +22,8 @@ public class WordController extends Controller{
     public static Result postWordAdd(){
         JsonNode json = request().body().asJson();
         models.Word word = Json.fromJson(json, models.Word.class);
-        if (word.id==null){
-            word.save();
-        }else {
-            word.update();
-        }
+
+        word.save();
 
         return ok(Json.toJson(word));
     }

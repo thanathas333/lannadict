@@ -37,7 +37,7 @@
 
         var app = angular.module("WordAddApp",[ ] ) ;
 
-        app.controller( 'WordAddCtrl', function ( $scope, $http , ) {
+        app.controller( 'WordAddCtrl', function ( $scope, $http ,$location ) {
          $scope.word = { };
 
             $scope.submitForm = function ( ) {
@@ -46,8 +46,7 @@
                 method : 'post',
                 data : $scope.word
             } ).success ( function ( response ) {
-                $scope.add = response;
-                 $scops.word = {}
+                 window.location = '/';
 
             } )
 
