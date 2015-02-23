@@ -72,7 +72,8 @@
                 method : 'post',
                 data : $scope.user
             } ).success ( function ( response ) {
-                window.location = '/';
+                $scope.users = response;
+                $scope.user = {}
 
             } )
 

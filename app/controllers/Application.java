@@ -17,43 +17,50 @@ public class Application extends Controller {
 
 
     public static Result home() {
-        return ok (home.render());
+        return ok(home.render());
     }
+
     public static Result login() {
-        return ok (login.render());
+        return ok(login.render());
     }
+
     public static Result about() {
-        return ok (about.render());
+        return ok(about.render());
     }
+
     public static Result search() {
         return ok(search.render());
     }
+
     public static Result add() {
-        return ok (add.render());
+        return ok(add.render());
     }
+
     public static Result register() {
-        return ok (register.render());
+        return ok(register.render());
     }
+
     public static Result admin() {
-        return ok (admin.render());
+        return ok(admin.render());
     }
+
     public static Result admins() {
-        return ok (admins.render());
+        return ok(admins.render());
     }
+
     public static Result adminaudit() {
-        return ok (adminaudit.render());
+        return ok(adminaudit.render());
     }
 
     public static Result terminologyaudit() {
-        return ok (terminologyaudit.render());
+        return ok(terminologyaudit.render());
     }
+
     public static Result terminologyadd() {
-        return ok (terminologyadd.render());
-
+        return ok(terminologyadd.render());
     }
 
-
-
+}
 
 
 

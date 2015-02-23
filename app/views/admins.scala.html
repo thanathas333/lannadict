@@ -23,18 +23,8 @@
           <td>{{word.thai}}</td>
           <td>{{word.link}}</td>
           <td>
-            <div class="dropdown">
-              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                <i class="glyphicon glyphicon-list-alt"></i> Word
-                <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">
-                  <i class="glyphicon glyphicon-pencil"></i> Edit</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">
-                  <i class="glyphicon glyphicon-trash"></i> Delete</a></li>
-              </ul>
-            </div>
+            <button type="button" ng-Click="edit(word)" class="btn btn-info">
+              <i class="glyphicon glyphicon-pencil"></i> Edit</button>
 
           </td>
         </tr>
@@ -44,6 +34,23 @@
       </table>
     </div>
 
+    <div class="row">
+      <form ng-submit="editSave()">
+        <div class="form-group">
+          <label>Lanna</label>
+          <input ng-model="editWord.lanna" type="text" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label>Thai</label>
+          <input ng-model="editWord.thai" type="text" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label>Link</label>
+          <input ng-model="editWord.link" type="text" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-pencil"></i>  Edit </button>
+      </form>
+    </div>
 
   </div>
 }{

@@ -23,7 +23,11 @@ public class WordController extends Controller{
         JsonNode json = request().body().asJson();
         models.Word word = Json.fromJson(json, models.Word.class);
 
-        word.save();
+        if (word.id==null){
+            word.save();
+        }else {
+            word.update();
+        }
 
         return ok(Json.toJson(word));
     }
