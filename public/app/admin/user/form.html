@@ -1,0 +1,55 @@
+<h1>เพิ่มผู้ใช้</h1>
+
+<form class="form-horizontal" ng-submit="submitForm()">
+    <div class="control-group">
+        <label class="control-label" for="inputusername"> Username</label>
+        <div class="controls">
+            <input ng-model="user.username" type="username" id="inputusername" placeholder="Username">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputpassword">Password</label>
+        <div class="controls">
+            <input ng-model="user.password" type="password" id="inputpassword" placeholder="Password">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputname"> name </label>
+        <div class="controls">
+            <input ng-model="user.name" type="name" id="inputname" placeholder="Name">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputsurname"> Surname </label>
+        <div class="controls">
+            <input ng-model="user.surname" type="surname" id="inputsurname" placeholder="Surname">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputaddress"> Address </label>
+        <div class="controls">
+            <input ng-model="user.address" type="address" id="inputaddress" placeholder="Address">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputtel"> Tel </label>
+        <div class="controls">
+            <input ng-model="user.tel" type="tel" id="inputtel" placeholder="Tel">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputemail"> E-mail </label>
+        <div class="controls">
+            <input ng-model="user.email" type="email" id="inputemail" placeholder="E-mail">
+        </div>
+    </div>
+
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-open"></i>  ตกลง </button>
+            <button ui-sref="list" type="button" class="btn btn-default">ยกเลิก</button>
+        </div>
+    </div>
+
+
+</form>

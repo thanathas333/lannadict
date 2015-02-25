@@ -35,10 +35,11 @@ app.controller ( 'WordCtrl', function ( $scope, $http ) {
 
     }
 
-    $scope.editSave=function{
+    $scope.editSave=function($http){
         $http({
             url : "/api/word/save",
             method : "post",
+            header : "application/json",
             data : $scope.editWord
         }).success(function(response){
             console.log(response);
@@ -68,13 +69,11 @@ app.controller ( 'WordCtrl', function ( $scope, $http ) {
                 url : "/api/word/delete",
                 method : "post",
                 data : word
-            }).success(function(response){
-                $scope.words.splice(admins,1);
+            }).success(function(response) {
+                $scope.words.splice(admins, 1);
 
-                )}
+            })
 
-    }
+    })
 
-})
-
-} ) ;
+});

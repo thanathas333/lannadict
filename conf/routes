@@ -14,12 +14,23 @@ GET         /admins                  controllers.Application.admins()
 GET         /adminaudit              controllers.Application.adminaudit()
 GET         /terminologyaudit        controllers.Application.terminologyaudit()
 GET         /terminologyadd          controllers.Application.terminologyadd()
+GET         /admin/edy               controllers.Application.edy()
+
 
 #Word
 GET         /api/word/all            controllers.WordController.getAllWords
 POST        /api/word/save           controllers.WordController.postWordAdd()
 POST        /api/word/delete         controllers.WordController.postDelete()
 
+
+#user
+GET         /api/user/:id            controllers.UserController.getById(id: Long)
+POST        /api/user/save           controllers.UserController.postSave()
+POST        /api/user/delete         controllers.UserController.postDelete()
+
+#user registration
+
+#POST        /api/user/register        controllers.UserController.postRegister()
 
 
 # Map static resources from the /public folder to the /assets URL path
@@ -30,7 +41,7 @@ GET         /assets/*file            controllers.Assets.at(path="/public", file)
 POST        /search                  controllers.SearchController.postSearch()
 POST        /word-add                controllers.WordController.postWordAdd()
 GET         /get-words               controllers.WordController.getAllWords()
-POST        /user-add                controllers.UserController.postUserAdd()
+POST        /user-add                controllers.UserController.postSave()
 GET         /get-users               controllers.UserController.getAllUsers()
 
 

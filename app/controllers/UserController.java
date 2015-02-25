@@ -19,11 +19,29 @@ public class UserController extends Controller {
         return ok(Json.toJson(users));
     }
 
-    public static Result postUserAdd(){
+    public static Result getById(long id){
+        User user = User.finder.byId(id);
+        return ok(Json.toJson(user));
+    }
+
+    public static Result postSave(){
         JsonNode json = request().body().asJson();
         User user = Json.fromJson(json,User.class);
 
-        user.save();
+        if(user.id != null){
+            user.update();
+        }else {
+            user.save();
+        }
+
+        return ok(Json.toJson(user));
+    }
+
+    public static Result postDelete(){
+        JsonNode json = request().body().asJson();
+        User user = Json.fromJson(json, User.class);
+
+        user.delete();
 
         return ok(Json.toJson(user));
     }
