@@ -18,9 +18,11 @@ GET         /admin/edy               controllers.Application.edy()
 
 
 #Word
-GET         /api/word/all            controllers.WordController.getAllWords
-POST        /api/word/save           controllers.WordController.postWordAdd()
+GET         /api/word/:id            controllers.WordController.getById(id: Long)
+POST        /api/word/save           controllers.WordController.postSave()
 POST        /api/word/delete         controllers.WordController.postDelete()
+
+
 
 
 #user
@@ -39,7 +41,7 @@ GET         /assets/*file            controllers.Assets.at(path="/public", file)
 #Compute Data
 
 POST        /search                  controllers.SearchController.postSearch()
-POST        /word-add                controllers.WordController.postWordAdd()
+POST        /word-add                controllers.WordController.postSave()
 GET         /get-words               controllers.WordController.getAllWords()
 POST        /user-add                controllers.UserController.postSave()
 GET         /get-users               controllers.UserController.getAllUsers()

@@ -1,61 +1,7 @@
-@layoutadmin(){
+@layoutadmin() {
   <div ng-app="AdminsApp">
-    <h1> แก้ไขคำศัพท์ </h1>
-
-    <div class="panel panel-default" ng-controller="ListCtrl">
-        <!-- Default panel contents -->
-      <div class="panel-heading">Word Control</div>
-
-        <!-- Table -->
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Lanna</th>
-            <th>Thai</th>
-            <th>Link</th>
-            <th>Control</th>
-          </tr>
-        </thead>
-        <tr ng-repeat="word in words">
-          <td>{{word.id}}</td>
-          <td>{{word.lanna}}</td>
-          <td>{{word.thai}}</td>
-          <td>{{word.link}}</td>
-          <td>
-            <button type="button" ng-Click="edit(word)" class="btn btn-info">
-              <i class="glyphicon glyphicon-pencil"></i> Edit</button>
-            <button type="button" ng-Click="delete(word)" class="btn btn-danger">
-                <i class="glyphicon glyphicon-trash"></i>  Delete</button>
-
-          </td>
-        </tr>
-        <tbody>
-
-        </tbody>
-      </table>
-    </div>
-
-    <div class="row">
-      <form ng-submit="editSave()">
-        <div class="form-group">
-          <label>Lanna</label>
-          <input ng-model="editWord.lanna" type="text" class="form-control"/>
-        </div>
-        <div class="form-group">
-          <label>Thai</label>
-          <input ng-model="editWord.thai" type="text" class="form-control"/>
-        </div>
-        <div class="form-group">
-          <label>Link</label>
-          <input ng-model="editWord.link" type="text" class="form-control"/>
-        </div>
-        <button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-pencil"></i>  Edit </button>
-      </form>
-    </div>
-
+    <div ui-view></div>
   </div>
-}{
-  <script type="text/javascript" src="@routes.Assets.at("javascripts/WordApp.js")"></script>
-
+} {
+  <script type="text/javascript" src="@routes.Assets.at("app/admin/AdminsApp.js")"></script>
 }
