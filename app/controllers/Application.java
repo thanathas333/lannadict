@@ -60,10 +60,6 @@ public class Application extends Controller {
         return ok(terminologyadd.render());
     }
 
-    public  static Result edy(){
-        return ok(edy.render());
-    }
-
 }
 
 

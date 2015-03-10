@@ -14,7 +14,6 @@ GET         /admins                  controllers.Application.admins()
 GET         /adminaudit              controllers.Application.adminaudit()
 GET         /terminologyaudit        controllers.Application.terminologyaudit()
 GET         /terminologyadd          controllers.Application.terminologyadd()
-GET         /admin/edy               controllers.Application.edy()
 
 
 #Word

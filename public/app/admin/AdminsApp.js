@@ -14,7 +14,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "assets/app/admin/word/list.html",
             controller: "ListCtrl",
             resolve : {
-                users : function($http){
+                words : function($http){
                     return $http({
                         url: "/get-words",
                         method: "get"
@@ -27,7 +27,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "assets/app/admin/word/form.html",
             controller : "FormCtrl",
             resolve : {
-                user : function(){
+                word : function(){
                     return { data : { } };
                 }
             }
@@ -38,7 +38,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "assets/app/admin/word/form.html",
             controller : "FormCtrl",
             resolve : {
-                user : function($http,$stateParams){
+                word : function($http,$stateParams){
                     return $http({
                         url: "/api/word/" + $stateParams.id,
                         method: "get"
