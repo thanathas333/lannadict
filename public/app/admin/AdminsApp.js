@@ -1,4 +1,5 @@
 
+
 var app = angular.module("AdminsApp", ['ui.router']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {

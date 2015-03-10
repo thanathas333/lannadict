@@ -42,7 +42,7 @@ GET         /assets/*file            controllers.Assets.at(path="/public", file)
 
 POST        /search                  controllers.SearchController.postSearch()
 POST        /word-add                controllers.WordController.postSave()
-GET         /get-words               controllers.WordController.getAllWords()
+GET         /get-words               controllers.WordController.getAllWords
 POST        /user-add                controllers.UserController.postSave()
 GET         /get-users               controllers.UserController.getAllUsers()
 
