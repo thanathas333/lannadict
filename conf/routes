@@ -22,6 +22,10 @@ POST        /api/word/save           controllers.WordController.postSave()
 POST        /api/word/delete         controllers.WordController.postDelete()
 
 
+#search
+POST        /api/search/all          controllers.SearchController.postSearch()
+
+
 
 
 #user
