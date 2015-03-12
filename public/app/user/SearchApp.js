@@ -3,7 +3,7 @@
  */
 
 var app = angular.module("SearchApp",[]);
-app.controller('SearchCtrl',function($scope,$http){
+app.controller('SearchCtrl',function($scope,$http ){
     console.log("SearchCtrl...");
 
     $scope.search = {
