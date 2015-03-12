@@ -20,4 +20,5 @@ app.controller('SearchCtrl',function($scope,$http ){
             $scope.search = response;
         })
     }
+
 });
