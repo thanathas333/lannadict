@@ -30,4 +30,10 @@ public class SearchController extends Controller {
         return ok(Json.toJson(r));
     }
 
+    public static Result getAll(){
+        DynamicForm form = Form.form().bindFromRequest();
+        List<Word> words = Word.finder.all();
+        return ok(Json.toJson(words));
+    }
+
 }

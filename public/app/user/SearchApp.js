@@ -15,6 +15,7 @@ app.controller('SearchCtrl',function($scope,$http ){
         $http({
             url : "/search",
             method : 'post',
+            header : 'application/json',
             data : $scope.search
         } ).success(function(response){
             $scope.search = response;
