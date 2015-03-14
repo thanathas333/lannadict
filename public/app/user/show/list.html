@@ -1,0 +1,31 @@
+<h1>รายการ</h1>
+
+<div class="row">
+    <div class="col-lg-12">
+        <button ui-sref="add" class="btn btn-primary">เพิ่มคำศัพท์</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <!-- Table -->
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Lanna</th>
+                <th>Thai</th>
+                <th>Link</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="word in words">
+                <td>{{word.id}}</td>
+                <td>{{word.lanna}}</td>
+                <td>{{word.thai}}</td>
+                <td>{{word.link}}</td>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
