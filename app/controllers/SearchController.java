@@ -19,21 +19,14 @@ public class SearchController extends Controller {
     public static Result postSearch(){
 
         JsonNode json = request().body().asJson();
-
-        class res {
-            public String search;
-        }
-
-        res r = new res();
-        r.search = "";
-
-        return ok(Json.toJson(r));
+        String search = json.get("search").textValue();
+        search = "%"+search+"%";
+        List<Word> words = SearchController.search(search);
+        return ok(Json.toJson(words));
     }
 
-    public static Result getAll(){
-        DynamicForm form = Form.form().bindFromRequest();
-        List<Word> words = Word.finder.all();
-        return ok(Json.toJson(words));
+    private static List<Word> search(String str){
+        return Word.finder.where().ilike("thai",str).findList();
     }
 
 }

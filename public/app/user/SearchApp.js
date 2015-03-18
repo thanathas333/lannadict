@@ -7,8 +7,8 @@ var app = angular.module("SearchApp",[]);
 app.controller('SearchCtrl',function($scope,$http){
     console.log("SearchCtrl...");
 
-    $scope.search = {
-    };
+    $scope.search = {};
+    $scope.results = [];
 
     $scope.submitForm = function(){
         console.log("submit...");
@@ -16,11 +16,11 @@ app.controller('SearchCtrl',function($scope,$http){
         $http({
             url : "/search",
             method : 'post',
-            header : 'application/json',
             data : $scope.search
         } ).success(function(response){
-            $scope.search = response;
+            $scope.results = response;
         })
+
     }
 
 });
