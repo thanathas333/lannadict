@@ -19,7 +19,6 @@ app.controller('SearchCtrl',function($scope,$http){
             data : $scope.search
         } ).success(function(response){
             $scope.results = response;
-
         })
 
     }
