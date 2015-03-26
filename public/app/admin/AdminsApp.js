@@ -11,7 +11,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('list', {
             url: "/list",
-            templateUrl: "assets/app/admin/word/list1.html",
+            templateUrl: "assets/app/admin/user/list.html",
             controller: "ListCtrl",
             resolve : {
                 words : function($http){
@@ -24,7 +24,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('add', {
             url: "/add",
-            templateUrl: "assets/app/admin/word/form1.html",
+            templateUrl: "assets/app/admin/user/form.html",
             controller : "FormCtrl",
             resolve : {
                 word : function(){
@@ -35,7 +35,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('edit',{
             url : "/edit/:id",
-            templateUrl: "assets/app/admin/word/form1.html",
+            templateUrl: "assets/app/admin/user/form.html",
             controller : "FormCtrl",
             resolve : {
                 word : function($http,$stateParams){

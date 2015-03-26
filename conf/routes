@@ -16,6 +16,7 @@ GET         /terminologyaudit        controllers.Application.terminologyaudit()
 GET         /terminologyadd          controllers.Application.terminologyadd()
 
 
+
 #Word
 GET         /api/word/:id            controllers.WordController.getById(id: Long)
 POST        /api/word/save           controllers.WordController.postSave()
