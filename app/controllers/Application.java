@@ -60,6 +60,9 @@ public class Application extends Controller {
         return ok(terminologyadd.render());
     }
 
+    public static Result user() {
+        return ok(user.render());
+    }
 }
 
 
