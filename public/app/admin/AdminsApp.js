@@ -1,5 +1,3 @@
-
-
 var app = angular.module("AdminsApp", ['ui.router']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
@@ -53,7 +51,6 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 app.controller('ListCtrl', function ($scope, $http,words) {
     console.log("ListCtrl...");
-    console.log(words);
     $scope.words = words.data;
 
     $scope.delete = function(word){
