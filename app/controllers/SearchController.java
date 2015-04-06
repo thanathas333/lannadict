@@ -29,5 +29,4 @@ public class SearchController extends Controller {
         return Word.finder.where().ilike("thai",str).findList();
     }
 
-
 }

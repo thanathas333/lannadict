@@ -9,7 +9,7 @@ TerminologyApp.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('list', {
             url: "/list",
-            templateUrl: "assets/app/terminology/terminologyadd/list1.html",
+            templateUrl: "assets/app/terminology/terminologyword/list.html",
             controller: "ListCtrl",
             resolve: {
                 words: function ($http) {
@@ -22,7 +22,7 @@ TerminologyApp.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('add', {
             url: "/add",
-            templateUrl: "/assets/app/temrinology/terminologyadd/form1.html",
+            templateUrl: "/assets/app/temrinology/terminologyword/form.html",
             controller: "FormCtrl",
             resolve: {
                 word: function () {
@@ -33,7 +33,7 @@ TerminologyApp.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('edit', {
             url: "/edit/:id",
-            templateUrl: "assets/app/terminology/terminologyadd/form1.html",
+            templateUrl: "assets/app/terminology/terminologyword/form.html",
             controller: "FormCtrl",
             resolve: {
                 word: function ($http, $stateParams) {

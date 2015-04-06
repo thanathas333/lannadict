@@ -1,3 +1,8 @@
+/**
+ * Created by ZAM on 2/4/2015.
+ */
+
+
 var app = angular.module("AdminsApp", ['ui.router']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
@@ -9,7 +14,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('list', {
             url: "/list",
-            templateUrl: "assets/app/admin/user/list1.html",
+            templateUrl: "assets/app/admin/word/list.html",
             controller: "ListCtrl",
             resolve : {
                 words : function($http){
@@ -22,7 +27,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('add', {
             url: "/add",
-            templateUrl: "assets/app/admin/user/form1.html",
+            templateUrl: "assets/app/admin/word/form.html",
             controller : "FormCtrl",
             resolve : {
                 word : function(){
@@ -33,7 +38,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('edit',{
             url : "/edit/:id",
-            templateUrl: "assets/app/admin/user/form1.html",
+            templateUrl: "assets/app/admin/word/form.html",
             controller : "FormCtrl",
             resolve : {
                 word : function($http,$stateParams){
@@ -51,6 +56,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 app.controller('ListCtrl', function ($scope, $http,words) {
     console.log("ListCtrl...");
+    console.log(words);
     $scope.words = words.data;
 
     $scope.delete = function(word){
