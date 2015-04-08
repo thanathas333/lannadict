@@ -49,8 +49,3 @@ POST        /word-add                controllers.WordController.postSave()
 GET         /get-words               controllers.WordController.getAllWords
 POST        /user-add                controllers.UserController.postSave()
 GET         /get-users               controllers.UserController.getAllUsers()
-
-
-
-
-
