@@ -1,6 +1,6 @@
-var TerminologyApp = angular.module("TerminologyauditApp", ['ui.router']);
+var app = angular.module("TerminologyauditApp", ['ui.router']);
 
-TerminologyApp.config(function ($stateProvider, $urlRouterProvider) {
+app.config(function ($stateProvider, $urlRouterProvider) {
     //
     // For any unmatched url, redirect to /state1
     $urlRouterProvider.otherwise("/list");
@@ -46,7 +46,7 @@ TerminologyApp.config(function ($stateProvider, $urlRouterProvider) {
         })
 });
 
-TerminologyApp.controller('ListCtrl', function ($scope, $http,words) {
+app.controller('ListCtrl', function ($scope, $http,words) {
     console.log("ListCtrl...");
     $scope.words = words.data;
 
@@ -65,7 +65,7 @@ TerminologyApp.controller('ListCtrl', function ($scope, $http,words) {
 
 });
 
-TerminologyApp.controller('FormCtrl', function ($scope, $http, $state, word) {
+app.controller('FormCtrl', function ($scope, $http, $state, word) {
 
     $scope.word = word.data;
 
