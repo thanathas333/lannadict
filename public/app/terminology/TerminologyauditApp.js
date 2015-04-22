@@ -11,8 +11,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: "/list",
             templateUrl: "assets/app/terminology/terminologyword/list.html",
             controller: "ListCtrl",
-            resolve: {
-                words: function ($http) {
+            resolve : {
+                words : function($http){
                     return $http({
                         url: "/get-words",
                         method: "get"
@@ -22,21 +22,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('add', {
             url: "/add",
-            templateUrl: "/assets/app/temrinology/terminologyword/form.html",
-            controller: "FormCtrl",
-            resolve: {
-                word: function () {
-                    return {data: {}};
+            templateUrl: "assets/app/terminology/terminologyword/form.html",
+            controller : "FormCtrl",
+            resolve : {
+                word : function(){
+                    return { data : { } };
                 }
             }
         })
 
-        .state('edit', {
-            url: "/edit/:id",
+        .state('edit',{
+            url : "/edit/:id",
             templateUrl: "assets/app/terminology/terminologyword/form.html",
-            controller: "FormCtrl",
-            resolve: {
-                word: function ($http, $stateParams) {
+            controller : "FormCtrl",
+            resolve : {
+                word : function($http,$stateParams){
                     return $http({
                         url: "/api/word/" + $stateParams.id,
                         method: "get"
@@ -44,10 +44,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+
+
+
 });
 
 app.controller('ListCtrl', function ($scope, $http,words) {
     console.log("ListCtrl...");
+    console.log(words);
     $scope.words = words.data;
 
     $scope.delete = function(word){
@@ -63,20 +67,21 @@ app.controller('ListCtrl', function ($scope, $http,words) {
         }
     }
 
+
 });
 
-app.controller('FormCtrl', function ($scope, $http, $state, word) {
+app.controller('FormCtrl',function($scope,$http,$state,word){
 
     $scope.word = word.data;
 
-    $scope.submitForm = function () {
-        $http({
-            url: '/api/word/save',
-            method: 'post',
-            data: $scope.word
-        }).success(function (response) {
+    $scope.submitForm = function(){
+        $http ( {
+            url : '/api/word/save',
+            method : 'post',
+            data : $scope.word
+        } ).success ( function ( response ) {
             $state.go('list');
-        })
+        } )
     }
 
 });

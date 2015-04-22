@@ -1,6 +1,3 @@
-<h1>เพิ่ม ลบ แก้ไขคำศัพท์</h1>
-
-
 <div class="row">
     <div class="col-lg-12">
         <button ui-sref="add" class="btn btn-primary">เพิ่มคำศัพท์</button>
@@ -9,7 +6,7 @@
 
 <div class="panel panel-default">
     <!-- Default panel contents -->
-    <div class="panel-heading">รายการคำศัพท์</div>
+    <div class="panel-heading">รายการคำศัพท์ภาษาล้านนา</div>
 
     <!-- Table -->
 
@@ -37,12 +34,12 @@
                     </button>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                         <li role="presentation">
-                            <a ui-sref="edit({id:user.id})" role="menuitem" tabindex="-1">
+                            <a ui-sref="edit({id:word.id})" role="menuitem" tabindex="-1">
                                 <i class="glyphicon glyphicon-pencil"></i> Edit
                             </a>
                         </li>
                         <li role="presentation">
-                            <a ng-click="delete(user)" role="menuitem" tabindex="-1">
+                            <a ng-click="delete(word)" role="menuitem" tabindex="-1">
                                 <i class="glyphicon glyphicon-trash"></i> Delete
                             </a>
                         </li>
