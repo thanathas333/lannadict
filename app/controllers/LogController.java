@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import models.User;
 import models.Word;
 import play.*;
+import play.api.mvc.Session;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.*;
@@ -17,6 +18,11 @@ import java.util.Map;
 
 public class LogController extends Controller {
 
+    public static class LoginForm {
+        public String username;
+        public String password;
+    }
+
     public static Result login() {
         return ok(
                 login.render()
@@ -24,21 +30,26 @@ public class LogController extends Controller {
     }
 
     public static Result authenticate(){
-        JsonNode json = request().body().asJson();
 
-        String username;
-        String password;
+        Form<LoginForm> form = Form.form(LoginForm.class).bindFromRequest();
 
-        username = json.get("username").asText();
-        password = json.get("password").asText();
+        String username = form.get().username;
+        String password = form.get().password;
 
-        User user = User.finder.where().eq("username",username).eq("password",password).findList().get(0);
+        List<User> users = User.finder.where().eq("username",username).eq("password",password).findList();
 
-        return ok(Json.toJson(user));
-
+        if(users.size() ==1){
+            User user = users.get(0);
+            session("user_id",user.id.toString());
+            return ok(Json.toJson(user));
+        }else {
+            return badRequest("Username or Password is in valid");
+        }
     }
 
-
-
-
+    public static Result logout(){
+        session().clear();
+        return  ok();
+    }
 }
+
