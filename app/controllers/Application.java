@@ -64,10 +64,6 @@ public class Application extends Controller {
         return ok(user.render());
     }
 
-    public static Result userprofile() {
-        return ok(userprofile.render());
-    }
-
     public static Result useraddword() {
         return ok(useraddword.render());
     }
