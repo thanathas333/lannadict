@@ -7,19 +7,19 @@
             <div class="control-group">
                 <label class="control-label" for="inputlanna">ภาษาล้านนา</label>
                 <div class="controls">
-                    <input ng-model="word.lanna" type="lanna" id="inputlanna" placeholder="Lanna">
+                    <input ng-model="terminology.lanna" type="lanna" id="inputlanna" placeholder="Lanna">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputthai">ภาษาไทย</label>
                 <div class="controls">
-                    <input ng-model="word.thai" type="thai" id="inputthai" placeholder="Thai">
+                    <input ng-model="terminology.thai" type="thai" id="inputthai" placeholder="Thai">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputlink">ลิงค์</label>
                 <div class="controls">
-                    <input ng-model="word.link" type="link" id="inputlink" placeholder="Link">
+                    <input ng-model="terminology.link" type="link" id="inputlink" placeholder="Link">
                 </div>
             </div>
             <p>
@@ -38,16 +38,16 @@
         var app = angular.module("WordAddApp",[ ] ) ;
 
         app.controller( 'WordAddCtrl', function ( $scope, $http ) {
-         $scope.word = { };
+         $scope.terminology = { };
 
             $scope.submitForm = function ( ) {
             $http ( {
-                url : '/word-add',
+                url : '/terminology-add',
                 method : 'post',
-                data : $scope.word
+                data : $scope.terminology
             } ).success ( function ( response ) {
-                 $scope.words = response;
-                $scope.word = {}
+                 $scope.terminologys = response;
+                $scope.terminology = {}
 
             } )
 
