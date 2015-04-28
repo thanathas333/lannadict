@@ -3,6 +3,7 @@
 # ~~~~
 
 # Home page
+
 GET         /                        controllers.Application.home()
 GET         /login                   controllers.Application.login()
 GET         /about                   controllers.Application.about()
@@ -24,21 +25,27 @@ POST        /login                   controllers.LogController.authenticate()
 
 
 #Word
-GET         /api/word/:id            controllers.WordController.getById(id: Long)
-POST        /api/word/save           controllers.WordController.postSave()
-POST        /api/word/delete         controllers.WordController.postDelete()
+GET         /api/word/:id                  controllers.WordController.getById(id: Long)
+POST        /api/word/save                 controllers.WordController.postSave()
+POST        /api/word/delete               controllers.WordController.postDelete()
+
+#Terminology
+GET         /api/terminology/:id           controllers.TerminologyController.getById(id: Long)
+POST        /api/terminology/save          controllers.TerminologyController.postSave()
+POST        /api/terminology/delete        controllers.TerminologyController.postDelete()
+
 
 
 #search
-POST        /api/search/all          controllers.SearchController.postSearch()
+POST        /api/search/all                controllers.SearchController.postSearch()
 
 
 
 
 #user
-GET         /api/user/:id            controllers.UserController.getById(id: Long)
-POST        /api/user/save           controllers.UserController.postSave()
-POST        /api/user/delete         controllers.UserController.postDelete()
+GET         /api/user/:id                  controllers.UserController.getById(id: Long)
+POST        /api/user/save                 controllers.UserController.postSave()
+POST        /api/user/delete               controllers.UserController.postDelete()
 
 #user registration
 
@@ -46,12 +53,14 @@ POST        /api/user/delete         controllers.UserController.postDelete()
 
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file            controllers.Assets.at(path="/public", file)
+GET         /assets/*file                  controllers.Assets.at(path="/public", file)
 
 #Compute Data
 
-POST        /search                  controllers.SearchController.postSearch()
-POST        /word-add                controllers.WordController.postSave()
-GET         /get-words               controllers.WordController.getAllWords
-POST        /user-add                controllers.UserController.postSave()
-GET         /get-users               controllers.UserController.getAllUsers()
+POST        /search                        controllers.SearchController.postSearch()
+POST        /word-add                      controllers.WordController.postSave()
+GET         /get-words                     controllers.WordController.getAllWords
+POST        /user-add                      controllers.UserController.postSave()
+GET         /get-users                     controllers.UserController.getAllUsers()
+POST        /terminology-add               controllers.TerminologyController.postSave()
+GET         /get-terminologys              controllers.TerminologyController.getAllTerminologys

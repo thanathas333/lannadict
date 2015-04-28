@@ -19,6 +19,7 @@ app.controller('SearchCtrl',function($scope,$http,$location){
         } ).success(function(response){
             $scope.results = response;
             window.location = '/search';
+
         })
     }
 });
