@@ -72,7 +72,9 @@ public class Application extends Controller {
         return ok(statusaddword.render());
     }
 
-
+    public static Result terminologystatus() {
+        return ok(terminologystatus.render());
+    }
 }
 
 
