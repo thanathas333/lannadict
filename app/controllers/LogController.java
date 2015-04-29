@@ -42,8 +42,10 @@ public class LogController extends Controller {
             User user = users.get(0);
             session("user_id",user.id.toString());
             return ok(Json.toJson(user));
+            
         }else {
             return badRequest("Username or Password is in valid");
+
         }
     }
 

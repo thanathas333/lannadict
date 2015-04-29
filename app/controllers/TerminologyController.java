@@ -28,6 +28,7 @@ public class TerminologyController extends Controller {
         if(terminology.id != null){
             terminology.update();
         }else {
+            //terminology.user_id=
             terminology.save();
         }
 

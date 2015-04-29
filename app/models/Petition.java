@@ -18,8 +18,8 @@ public class Petition extends Model {
     public String lanna;
     public String thai;
     public String link;
-    public String status_id;
-    public String user_id;
+    public int status_id;
+    public int user_id;
 
     public static Finder<Long, Petition> finder = new Finder<Long, Petition>(Long.class, Petition.class);
 

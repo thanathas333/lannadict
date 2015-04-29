@@ -16,9 +16,9 @@ public class Comment extends Model {
     public Long id;
 
     public String comment;
-    public String petition_id;
-    public String petition_status_id;
-    public String user_id;
+    public int petition_id;
+    public int petition_status_id;
+    public int user_id;
 
     public static Finder<Long, Comment> finder = new Finder<Long, Comment>(Long.class, Comment.class);
 
