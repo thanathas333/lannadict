@@ -65,6 +65,10 @@ public class Application extends Controller {
         return ok(users.render());
     }
 
+    public static Result logout() {
+        return ok(logout.render());
+    }
+
     public static Result useraddword() {
         return ok(useraddword.render());
     }
