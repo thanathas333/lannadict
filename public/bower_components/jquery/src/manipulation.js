@@ -111,7 +111,7 @@ function cloneCopyEvent( src, dest ) {
 		}
 	}
 
-	// 2. Copy user data
+	// 2. Copy users data
 	if ( data_user.hasData( src ) ) {
 		udataOld = data_user.access( src );
 		udataCur = jQuery.extend( {}, udataOld );
@@ -300,7 +300,7 @@ jQuery.extend({
 					}
 				}
 			}
-			// Discard any remaining `user` data
+			// Discard any remaining `users` data
 			delete data_user.cache[ elem[ data_user.expando ] ];
 		}
 	}

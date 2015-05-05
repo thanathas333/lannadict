@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import models.User;
 import models.Word;
 import play.*;
+import play.api.mvc.Session;
 import play.mvc.*;
 import play.libs.Json;
 
@@ -60,8 +61,8 @@ public class Application extends Controller {
         return ok(terminologyadd.render());
     }
 
-    public static Result user() {
-        return ok(user.render());
+    public static Result users() {
+        return ok(users.render());
     }
 
     public static Result useraddword() {

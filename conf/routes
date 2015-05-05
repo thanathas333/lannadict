@@ -16,7 +16,7 @@ GET         /adminaudit                    controllers.Application.adminaudit()
 GET         /terminologyaudit              controllers.Application.terminologyaudit()
 GET         /terminologyadd                controllers.Application.terminologyadd()
 GET         /terminologystatus             controllers.Application.terminologystatus()
-GET         /user                          controllers.Application.user()
+GET         /users                          controllers.Application.users()
 GET         /useraddword                   controllers.Application.useraddword()
 GET         /statusaddword                 controllers.Application.statusaddword()
 POST        /login                         controllers.LogController.authenticate()
@@ -42,14 +42,14 @@ POST        /api/search/all                controllers.SearchController.postSear
 
 
 
-#user
+#users
 GET         /api/user/:id                  controllers.UserController.getById(id: Long)
 POST        /api/user/save                 controllers.UserController.postSave()
 POST        /api/user/delete               controllers.UserController.postDelete()
 
-#user registration
+#users registration
 
-#POST        /api/user/register        controllers.UserController.postRegister()
+#POST        /api/users/register        controllers.UserController.postRegister()
 
 
 # Map static resources from the /public folder to the /assets URL path

@@ -14,7 +14,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('list', {
             url: "/list",
-            templateUrl: "assets/app/admin/user/list.html",
+            templateUrl: "assets/app/admin/users/list.html",
             controller: "ListCtrl",
             resolve : {
                 users : function($http){
@@ -27,7 +27,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('add', {
             url: "/add",
-            templateUrl: "assets/app/admin/user/form.html",
+            templateUrl: "assets/app/admin/users/form.html",
             controller : "FormCtrl",
             resolve : {
                 user : function(){
@@ -38,12 +38,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('edit',{
             url : "/edit/:id",
-            templateUrl: "assets/app/admin/user/form.html",
+            templateUrl: "assets/app/admin/users/form.html",
             controller : "FormCtrl",
             resolve : {
                 user : function($http,$stateParams){
                     return $http({
-                        url: "/api/user/" + $stateParams.id,
+                        url: "/api/users/" + $stateParams.id,
                         method: "get"
                     })
                 }
@@ -60,9 +60,9 @@ app.controller('ListCtrl', function ($scope, $http,users) {
     $scope.users = users.data;
 
     $scope.delete = function(user){
-        if ( confirm ("Do you want to delete this user[ID :" +user.id +"]  ?")){
+        if ( confirm ("Do you want to delete this users[ID :" +user.id +"]  ?")){
             $http ( {
-                url : '/api/user/delete',
+                url : '/api/users/delete',
                 method : 'post',
                 data : user
             } ).success ( function ( response ) {
@@ -81,7 +81,7 @@ app.controller('FormCtrl',function($scope,$http,$state,user){
 
     $scope.submitForm = function(){
         $http ( {
-            url : '/api/user/save',
+            url : '/api/users/save',
             method : 'post',
             data : $scope.user
         } ).success ( function ( response ) {
