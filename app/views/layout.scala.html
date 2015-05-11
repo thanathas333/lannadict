@@ -35,7 +35,6 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
 
-                        <li><a href="@routes.Application.home()">HOME</a></li>
                         @if(session.get("user_id") != null){
                             <li><a href="@routes.Application.logout()">Logout</a></li>
                         }else{
