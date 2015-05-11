@@ -35,7 +35,11 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
 
-                        <li><a href="@routes.Application.login()">Login</a></li>
+                        @if(session.get("user_id") != null){
+                            <li><a href="@routes.Application.logout()">Logout</a></li>
+                        }else{
+                            <li><a href="@routes.Application.login()">Login</a></li>
+                        }
                         <li><a href="@routes.Application.add()">ป้อนคำใหม่</a></li>
                         <li><a href="@routes.Application.about()">About</a></li>
 

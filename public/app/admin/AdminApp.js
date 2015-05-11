@@ -14,7 +14,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('list', {
             url: "/list",
-            templateUrl: "assets/app/admin/users/list.html",
+            templateUrl: "assets/app/admin/user/list.html",
             controller: "ListCtrl",
             resolve : {
                 users : function($http){
@@ -27,7 +27,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('add', {
             url: "/add",
-            templateUrl: "assets/app/admin/users/form.html",
+            templateUrl: "assets/app/admin/user/form.html",
             controller : "FormCtrl",
             resolve : {
                 user : function(){
@@ -38,12 +38,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
         .state('edit',{
             url : "/edit/:id",
-            templateUrl: "assets/app/admin/users/form.html",
+            templateUrl: "assets/app/admin/user/form.html",
             controller : "FormCtrl",
             resolve : {
                 user : function($http,$stateParams){
                     return $http({
-                        url: "/api/users/" + $stateParams.id,
+                        url: "/api/user/" + $stateParams.id,
                         method: "get"
                     })
                 }
@@ -62,7 +62,7 @@ app.controller('ListCtrl', function ($scope, $http,users) {
     $scope.delete = function(user){
         if ( confirm ("Do you want to delete this users[ID :" +user.id +"]  ?")){
             $http ( {
-                url : '/api/users/delete',
+                url : '/api/user/delete',
                 method : 'post',
                 data : user
             } ).success ( function ( response ) {
@@ -81,7 +81,7 @@ app.controller('FormCtrl',function($scope,$http,$state,user){
 
     $scope.submitForm = function(){
         $http ( {
-            url : '/api/users/save',
+            url : '/api/user/save',
             method : 'post',
             data : $scope.user
         } ).success ( function ( response ) {
