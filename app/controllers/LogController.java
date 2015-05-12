@@ -47,8 +47,7 @@ public class LogController extends Controller {
 
         }
     }
-
-    //public static Result logout(){};
+;
 
     public static Result logout(){
         session().clear();

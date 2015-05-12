@@ -22,7 +22,7 @@ TerminologyApp.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('add', {
             url: "/add",
-            templateUrl: "/assets/app/temrinology/terminologyword/form.html",
+            templateUrl: "/assets/app/terminology/terminologyword/form.html",
             controller: "FormCtrl",
             resolve: {
                 word: function () {
