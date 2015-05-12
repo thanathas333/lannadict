@@ -19,7 +19,7 @@ public class User extends Model {
     public String name;
     public String surname;
     public String address;
-    public int tel;
+    public String tel;
     public String email;
 
 

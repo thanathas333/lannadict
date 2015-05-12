@@ -17,7 +17,6 @@ create table petition (
   lanna                     varchar(255),
   thai                      varchar(255),
   link                      varchar(255),
-  status_id                 integer,
   user_id                   integer,
   constraint pk_petition primary key (id))
 ;
@@ -42,6 +41,7 @@ create table terminology (
   thai                      varchar(255),
   lanna                     varchar(255),
   link                      varchar(255),
+  status_id                 integer,
   user_id                   integer,
   constraint pk_terminology primary key (id))
 ;
@@ -53,7 +53,7 @@ create table user (
   name                      varchar(255),
   surname                   varchar(255),
   address                   varchar(255),
-  tel                       integer,
+  tel                       varchar(255),
   email                     varchar(255),
   constraint pk_user primary key (id))
 ;

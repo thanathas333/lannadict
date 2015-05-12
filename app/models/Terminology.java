@@ -18,6 +18,7 @@ public class Terminology extends Model {
     public String thai;
     public String lanna;
     public String link;
+    public int status_id;
     public int user_id;
 
     public static Finder<Long, Terminology> finder = new Finder<Long, Terminology>(Long.class, Terminology.class);
