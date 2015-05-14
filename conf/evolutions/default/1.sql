@@ -12,23 +12,6 @@ create table comment (
   constraint pk_comment primary key (id))
 ;
 
-create table petition (
-  id                        bigint auto_increment not null,
-  lanna                     varchar(255),
-  thai                      varchar(255),
-  link                      varchar(255),
-  user_id                   integer,
-  constraint pk_petition primary key (id))
-;
-
-create table role (
-  id                        bigint auto_increment not null,
-  thai                      varchar(255),
-  lanna                     varchar(255),
-  link                      varchar(255),
-  constraint pk_role primary key (id))
-;
-
 create table status (
   id                        bigint auto_increment not null,
   name                      varchar(255),
@@ -74,10 +57,6 @@ create table word (
 SET FOREIGN_KEY_CHECKS=0;
 
 drop table comment;
-
-drop table petition;
-
-drop table role;
 
 drop table status;
 
