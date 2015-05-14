@@ -84,6 +84,14 @@ public class Application extends Controller {
     public static Result useraddform() {
         return ok(useraddform.render());
     }
+
+    public static Result terminologycom() {
+        return ok(terminologycom.render());
+    }
+
+    public static Result comment() {
+        return ok(comment.render());
+    }
 }
 
 

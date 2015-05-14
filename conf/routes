@@ -21,6 +21,8 @@ GET         /logout                        controllers.Application.logout()
 GET         /useraddword                   controllers.Application.useraddword()
 GET         /statusaddword                 controllers.Application.statusaddword()
 GET         /useraddform                   controllers.Application.useraddform()
+GET         /terminologycom                controllers.Application.terminologycom()
+GET         /comment                       controllers.Application.comment()
 POST        /login                         controllers.LogController.authenticate()
 
 

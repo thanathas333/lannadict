@@ -1,0 +1,42 @@
+<h1>เพิ่มคำศัพท์</h1>
+
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">รายการคำศัพท์</div>
+
+    <!-- Table -->
+
+
+    <form class="form-horizontal" ng-submit="submitForm()">
+
+        <div class="control-group">
+            <label class="control-label" for="inputlanna">Lanna</label>
+            <div class="controls">
+                <input ng-model="word.lanna" type="lanna" id="inputlanna" placeholder="lanna">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputthai"> Thai </label>
+            <div class="controls">
+                <input ng-model="word.thai" type="thai" id="inputthai" placeholder="thai">
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputlink"> Link </label>
+            <div class="controls">
+                <input ng-model="word.link" type="link" id="inputlink" placeholder="link">
+            </div>
+        </div>
+        <textarea class="form-control" rows="3"></textarea>
+
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-open"></i>  ตกลง </button>
+                <button ui-sref="list" type="button" class="btn btn-default">ยกเลิก</button>
+            </div>
+        </div>
+
+    </form>
+</div>
