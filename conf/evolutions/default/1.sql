@@ -5,10 +5,9 @@
 
 create table comment (
   id                        bigint auto_increment not null,
+  terminology_id            bigint not null,
   comment                   varchar(255),
-  petition_id               integer,
-  petition_status_id        integer,
-  user_id                   integer,
+  user_id                   bigint,
   constraint pk_comment primary key (id))
 ;
 
@@ -24,8 +23,8 @@ create table terminology (
   thai                      varchar(255),
   lanna                     varchar(255),
   link                      varchar(255),
-  status_id                 integer,
-  user_id                   integer,
+  status_id                 bigint,
+  user_id                   bigint,
   constraint pk_terminology primary key (id))
 ;
 
@@ -49,6 +48,14 @@ create table word (
   constraint pk_word primary key (id))
 ;
 
+alter table comment add constraint fk_comment_terminology_1 foreign key (terminology_id) references terminology (id) on delete restrict on update restrict;
+create index ix_comment_terminology_1 on comment (terminology_id);
+alter table comment add constraint fk_comment_user_2 foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_comment_user_2 on comment (user_id);
+alter table terminology add constraint fk_terminology_status_3 foreign key (status_id) references status (id) on delete restrict on update restrict;
+create index ix_terminology_status_3 on terminology (status_id);
+alter table terminology add constraint fk_terminology_user_4 foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_terminology_user_4 on terminology (user_id);
 
 
 

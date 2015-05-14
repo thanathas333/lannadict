@@ -40,10 +40,17 @@ public class UserController extends Controller {
     public static Result postDelete(){
         JsonNode json = request().body().asJson();
         User user = Json.fromJson(json, User.class);
-
-        user.delete();
-
         return ok(Json.toJson(user));
+    }
+
+    public static Result getCurrent(){
+        Long user_id = Long.valueOf(session("user_id"));
+        User user = User.finder.byId(user_id);
+        return  ok(Json.toJson(user));
+    }
+
+    public static Result getAll(){
+        return ok(Json.toJson(User.finder.all()));
     }
 
 }

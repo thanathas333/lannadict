@@ -20,6 +20,7 @@ GET         /users                         controllers.Application.users()
 GET         /logout                        controllers.Application.logout()
 GET         /useraddword                   controllers.Application.useraddword()
 GET         /statusaddword                 controllers.Application.statusaddword()
+GET         /useraddform                   controllers.Application.useraddform()
 POST        /login                         controllers.LogController.authenticate()
 
 
@@ -44,9 +45,11 @@ POST        /api/search/all                controllers.SearchController.postSear
 
 
 #users
-GET         /api/user/:id                  controllers.UserController.getById(id: Long)
 POST        /api/user/save                 controllers.UserController.postSave()
 POST        /api/user/delete               controllers.UserController.postDelete()
+GET         /api/user/all                  controllers.UserController.getAll
+GET         /api/user/current              controllers.UserController.getCurrent()
+GET         /api/user/:id                  controllers.UserController.getById(id: Long)
 
 #users registration
 

@@ -4,6 +4,7 @@ import play.db.ebean.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * Created by chaow on 1/28/2015 AD.
@@ -16,9 +17,9 @@ public class Comment extends Model {
     public Long id;
 
     public String comment;
-    public int petition_id;
-    public int petition_status_id;
-    public int user_id;
+
+    @ManyToOne
+    public User user;
 
     public static Finder<Long, Comment> finder = new Finder<Long, Comment>(Long.class, Comment.class);
 

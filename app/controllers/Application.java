@@ -80,6 +80,10 @@ public class Application extends Controller {
     public static Result terminologystatus() {
         return ok(terminologystatus.render());
     }
+
+    public static Result useraddform() {
+        return ok(useraddform.render());
+    }
 }
 
 
