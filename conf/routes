@@ -34,9 +34,9 @@ POST        /api/word/save                 controllers.WordController.postSave()
 POST        /api/word/delete               controllers.WordController.postDelete()
 
 #Terminology
-GET         /api/terminology/:id           controllers.TerminologyController.getById(id: Long)
 POST        /api/terminology/save          controllers.TerminologyController.postSave()
 POST        /api/terminology/delete        controllers.TerminologyController.postDelete()
+GET         /api/terminology/:id           controllers.TerminologyController.getById(id: Long)
 
 
 

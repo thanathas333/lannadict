@@ -47,6 +47,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 
 
+
 });
 
 app.controller('ListCtrl', function ($scope, $http,words) {

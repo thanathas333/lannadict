@@ -11,24 +11,26 @@
     <form class="form-horizontal" ng-submit="submitForm()">
 
         <div class="control-group">
-            <label class="control-label" for="inputlanna">Lanna</label>
+            <label class="control-label" for="inputlanna">ภาษาล้านนา</label>
             <div class="controls">
-                <input ng-model="word.lanna" type="lanna" id="inputlanna" placeholder="lanna">
+                <input ng-model="terminology.lanna" type="lanna" id="inputlanna" placeholder="Lanna">
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="inputthai"> Thai </label>
+            <label class="control-label" for="inputthai">ภาษาไทย</label>
             <div class="controls">
-                <input ng-model="word.thai" type="thai" id="inputthai" placeholder="thai">
+                <input ng-model="terminology.thai" type="thai" id="inputthai" placeholder="Thai">
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="inputlink"> Link </label>
+            <label class="control-label" for="inputlink">ลิงค์</label>
             <div class="controls">
-                <input ng-model="word.link" type="link" id="inputlink" placeholder="link">
+                <input ng-model="terminology.link" type="link" id="inputlink" placeholder="Link">
             </div>
         </div>
-        <textarea class="form-control" rows="3"></textarea>
+        <div class="row">
+            <textarea class="form-control" rows="3" > </textarea>
+        </div>
 
 
         <div class="control-group">
