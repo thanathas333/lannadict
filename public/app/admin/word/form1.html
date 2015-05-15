@@ -20,12 +20,9 @@
         </div>
     </div>
 
-    <div class="control-group">
-        <label class="control-label" for="inputstatus"> Status</label>
-        <div class="controls">
-            <input ng-model="terminology.status.status" type="status" id="inputstatus" placeholder="Status">
-        </div>
-    </div>
+    <br> Status
+    <select ng-model="terminology.status.name" ng-options="item as item.name for item in statuss track by item.id" class="form-control" >
+    </select>
 
     <div class="control-group">
         <div class="controls">

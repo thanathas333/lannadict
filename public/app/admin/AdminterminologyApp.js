@@ -79,6 +79,13 @@ app.controller('FormCtrl',function($scope,$http,$state,terminology){
 
     $scope.terminology = terminology.data;
 
+    $http({
+        url : '/api/status/all',
+        method : 'get'
+    } ).success(function(response){
+        $scope.statuss = response;
+    })
+
     $scope.submitForm = function(){
         $http ( {
             url : '/api/terminology/save',

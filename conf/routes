@@ -43,6 +43,8 @@ GET         /api/terminology/:id           controllers.TerminologyController.get
 #search
 POST        /api/search/all                controllers.SearchController.postSearch()
 
+#status
+GET         /api/status/all                controllers.StatusController.getAll
 
 
 

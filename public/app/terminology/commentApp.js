@@ -12,9 +12,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "assets/app/terminology/comment/list.html",
             controller: "ListCtrl",
             resolve : {
-                words : function($http){
+                terminologys : function($http){
                     return $http({
-                        url: "/get-words",
+                        url: "/get-terminologys",
                         method: "get"
                     })
                 }
@@ -25,7 +25,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "assets/app/terminology/comment/form.html",
             controller : "FormCtrl",
             resolve : {
-                word : function(){
+                terminology : function(){
                     return { data : { } };
                 }
             }
@@ -36,9 +36,9 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: "assets/app/terminology/comment/form.html",
             controller : "FormCtrl",
             resolve : {
-                word : function($http,$stateParams){
+                terminology : function($http,$stateParams){
                     return $http({
-                        url: "/api/word/" + $stateParams.id,
+                        url: "/api/terminology/" + $stateParams.id,
                         method: "get"
                     })
                 }
@@ -50,20 +50,20 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 });
 
-app.controller('ListCtrl', function ($scope, $http,words) {
+app.controller('ListCtrl', function ($scope, $http,terminologys) {
     console.log("ListCtrl...");
-    console.log(words);
-    $scope.words = words.data;
+    console.log(terminologys);
+    $scope.terminologys = terminologys.data;
 
-    $scope.delete = function(word){
-        if ( confirm ("Do you want to delete this word[ID :" +word.id +"]  ?")){
+    $scope.delete = function(terminology){
+        if ( confirm ("Do you want to delete this terminology[ID :" +terminology.id +"]  ?")){
             $http ( {
-                url : '/api/word/delete',
+                url : '/api/terminology/delete',
                 method : 'post',
-                data : word
+                data : terminology
             } ).success ( function ( response ) {
-                index = $scope.words.indexOf(word);
-                $scope.words.splice(index,1);
+                index = $scope.terminologys.indexOf(terminology);
+                $scope.terminologys.splice(index,1);
             } )
         }
     }
@@ -71,15 +71,15 @@ app.controller('ListCtrl', function ($scope, $http,words) {
 
 });
 
-app.controller('FormCtrl',function($scope,$http,$state,word){
+app.controller('FormCtrl',function($scope,$http,$state,terminology){
 
-    $scope.word = word.data;
+    $scope.terminology = terminology.data;
 
     $scope.submitForm = function(){
         $http ( {
-            url : '/api/word/save',
+            url : '/api/terminology/save',
             method : 'post',
-            data : $scope.word
+            data : $scope.terminology
         } ).success ( function ( response ) {
             $state.go('list');
         } )
