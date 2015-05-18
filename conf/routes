@@ -24,6 +24,8 @@ GET         /useraddform                   controllers.Application.useraddform()
 GET         /terminologycom                controllers.Application.terminologycom()
 GET         /comment                       controllers.Application.comment()
 POST        /login                         controllers.LogController.authenticate()
+POST        /logout                        controllers.LogController.logout()
+
 
 
 

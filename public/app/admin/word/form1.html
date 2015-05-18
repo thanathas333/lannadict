@@ -19,10 +19,13 @@
             <input ng-model="terminology.link" type="link" id="inputlink" placeholder="Link">
         </div>
     </div>
+    <div class="control-group">
+        <label class="control-label" for="inputcomment">Comment</label>
+        <div class="controls">
+            <input ng-model="comment.comment" type="comment" id="inputcomment" placeholder="Comment">
+        </div>
+    </div>
 
-    <br> Status
-    <select ng-model="terminology.status.name" ng-options="item as item.name for item in statuss track by item.id" class="form-control" >
-    </select>
 
     <div class="control-group">
         <div class="controls">
