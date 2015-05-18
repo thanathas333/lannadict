@@ -44,7 +44,12 @@ GET         /api/terminology/:id           controllers.TerminologyController.get
 POST        /api/search/all                controllers.SearchController.postSearch()
 
 #status
+POST        /api/status/save               controllers.StatusController.postSave()
+POST        /api/status/delete             controllers.StatusController.postDelete()
 GET         /api/status/all                controllers.StatusController.getAll
+GET         /api/status/current            controllers.StatusController.getCurrent
+GET         /api/status/:id                controllers.StatusController.getById(id:Long)
+
 
 
 

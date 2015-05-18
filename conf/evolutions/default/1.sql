@@ -37,6 +37,7 @@ create table user (
   address                   varchar(255),
   tel                       varchar(255),
   email                     varchar(255),
+  status_id                 bigint,
   constraint pk_user primary key (id))
 ;
 
@@ -56,6 +57,8 @@ alter table terminology add constraint fk_terminology_status_3 foreign key (stat
 create index ix_terminology_status_3 on terminology (status_id);
 alter table terminology add constraint fk_terminology_user_4 foreign key (user_id) references user (id) on delete restrict on update restrict;
 create index ix_terminology_user_4 on terminology (user_id);
+alter table user add constraint fk_user_status_5 foreign key (status_id) references status (id) on delete restrict on update restrict;
+create index ix_user_status_5 on user (status_id);
 
 
 
