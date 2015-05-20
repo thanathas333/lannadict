@@ -36,7 +36,8 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         @if(session.get("user_id") != null){
-                            <li><a href="@routes.Application.logout()">@session.get("user_id")</a></li>
+                            <li><a href="@routes.Application.users()">@session.get("user_id") </a></li>
+                            <li><a href="@routes.Application.logout()">Logout </a></li>
                         }else{
                             <li><a href="@routes.Application.login()">Login</a></li>
                         }
