@@ -14,19 +14,16 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>Lanna</th>
-            <th>Thai</th>
-            <th>Link</th>
             <th>Comment</th>
-            <th>Control</th>
+            <th>Terminology</th>
+            <th>User</th>
         </tr>
         </thead>
-        <tr ng-repeat="terminology in terminologys">
-            <td>{{terminology.id}}</td>
-            <td>{{terminology.lanna}}</td>
-            <td>{{terminology.thai}}</td>
-            <td>{{terminology.link}}</td>
-            <td>{{terminology.comment}}</td>
+        <tr ng-repeat="comment in comments">
+            <td>{{comment.id}}</td>
+            <td>{{comment.comment}}</td>
+            <td>{{comment.terminology}}</td>
+            <td>{{comment.user}}</td>
             <td>
                 <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"

@@ -5,7 +5,7 @@
 # Home page
 
 GET         /                              controllers.Application.home()
-GET         /login                         controllers.Application.login()
+
 GET         /about                         controllers.Application.about()
 GET         /search                        controllers.Application.search()
 GET         /add                           controllers.Application.add()
@@ -17,13 +17,18 @@ GET         /terminologyaudit              controllers.Application.terminologyau
 GET         /terminologyadd                controllers.Application.terminologyadd()
 GET         /terminologystatus             controllers.Application.terminologystatus()
 GET         /users                         controllers.Application.users()
-GET         /logout                        controllers.Application.logout()
+
 GET         /useraddword                   controllers.Application.useraddword()
 GET         /statusaddword                 controllers.Application.statusaddword()
 GET         /useraddform                   controllers.Application.useraddform()
 GET         /terminologycom                controllers.Application.terminologycom()
 GET         /comment                       controllers.Application.comment()
+
+
+GET         /login                         controllers.Application.login()
 POST        /login                         controllers.LogController.authenticate()
+
+GET         /logout                        controllers.LogController.logout()
 POST        /logout                        controllers.LogController.logout()
 
 

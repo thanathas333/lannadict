@@ -18,6 +18,14 @@ import java.util.Map;
 
 public class LogController extends Controller {
 
+
+
+    public LogController() {
+//        Long user_id = Long.valueOf(session("user_id"));
+//        User current_user = User.finder.byId(user_id);
+//        Http.Context.current().args.put("current_user",current_user);
+    }
+
     public static class LoginForm {
         public String username;
         public String password;
@@ -40,21 +48,24 @@ public class LogController extends Controller {
 
         if(users.size() ==1){
             User user = users.get(0);
+
             session("user_id", user.id.toString());
-            return ok(Json.toJson(session("user_id")));
+            session("user_username",user.username);
+            session("user_name",user.name);
+            //return ok(Json.toJson(session("user_id")));
+            return redirect("/");
         }else {
+            session().clear();
             return badRequest("Username or Password is in valid");
 
         }
     }
-;
+
 
     public static Result logout(){
         session().clear();
         flash("success", "You've been logged out");
-        return ok(
-                logout.render()
-        );
+        return redirect("/");
     }
 }
 

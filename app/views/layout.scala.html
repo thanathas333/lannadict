@@ -36,8 +36,10 @@
                     <ul class="nav navbar-nav navbar-right">
 
                         @if(session.get("user_id") != null){
-                            <li><a href="@routes.Application.users()">@session.get("user_id") </a></li>
-                            <li><a href="@routes.Application.logout()">Logout </a></li>
+                            <li><a href="@routes.Application.users()">
+                                @session.get("user_name")
+                            </a></li>
+                            <li><a href="@routes.LogController.logout()">Logout </a></li>
                         }else{
                             <li><a href="@routes.Application.login()">Login</a></li>
                         }
@@ -57,6 +59,7 @@
             <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="@routes.Assets.at("bootstrap-3.3.2-dist/js/bootstrap.min.js")"></script>
         <script src="@routes.Assets.at("bower_components/angular/angular.min.js")"></script>
+        <script src="@routes.Assets.at("bower_components/angular/angular-ui-router.min.js")"></script>
         <script src="@routes.Assets.at("bower_components/angular/ui-bootstrap-tpls-0.12.1.min.js")"></script>
 
         @javascript

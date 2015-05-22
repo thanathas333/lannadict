@@ -23,7 +23,6 @@ create table terminology (
   thai                      varchar(255),
   lanna                     varchar(255),
   link                      varchar(255),
-  status_id                 bigint,
   user_id                   bigint,
   constraint pk_terminology primary key (id))
 ;
@@ -53,12 +52,10 @@ alter table comment add constraint fk_comment_terminology_1 foreign key (termino
 create index ix_comment_terminology_1 on comment (terminology_id);
 alter table comment add constraint fk_comment_user_2 foreign key (user_id) references user (id) on delete restrict on update restrict;
 create index ix_comment_user_2 on comment (user_id);
-alter table terminology add constraint fk_terminology_status_3 foreign key (status_id) references status (id) on delete restrict on update restrict;
-create index ix_terminology_status_3 on terminology (status_id);
-alter table terminology add constraint fk_terminology_user_4 foreign key (user_id) references user (id) on delete restrict on update restrict;
-create index ix_terminology_user_4 on terminology (user_id);
-alter table user add constraint fk_user_status_5 foreign key (status_id) references status (id) on delete restrict on update restrict;
-create index ix_user_status_5 on user (status_id);
+alter table terminology add constraint fk_terminology_user_3 foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_terminology_user_3 on terminology (user_id);
+alter table user add constraint fk_user_status_4 foreign key (status_id) references status (id) on delete restrict on update restrict;
+create index ix_user_status_4 on user (status_id);
 
 
 

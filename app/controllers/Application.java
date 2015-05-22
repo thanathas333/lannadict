@@ -16,8 +16,17 @@ import java.util.Map;
 
 public class Application extends Controller {
 
+    public Application() {
+//        Long user_id = Long.valueOf(session("user_id"));
+//        User current_user = User.finder.byId(user_id);
+//        Http.Context.current().args.put("current_user",current_user);
+    }
 
     public static Result home() {
+        if(Http.Context.current().args.get("current_user") != null){
+            System.out.println( Http.Context.current().args.get("current_user").toString());
+        }
+
         return ok(home.render());
     }
 
@@ -62,7 +71,16 @@ public class Application extends Controller {
     }
 
     public static Result users() {
-        return ok(users.render());
+        Long user_id = Long.valueOf( session("user_id") );
+        User user = User.finder.byId(user_id);
+        if (user.status.name.equals("user")){
+            return ok(users.render());
+        }else if (user.status.name.equals("admin")) {
+            return redirect("/admin");
+        }else {
+            return redirect("terminologyadd");
+        }
+
     }
 
     public static Result logout() {
