@@ -22,6 +22,8 @@ create table terminology (
   thai                      varchar(255),
   lanna                     varchar(255),
   link                      varchar(255),
+  romanbali                 varchar(255),
+  thaibali                  varchar(255),
   user_id                   bigint,
   constraint pk_terminology primary key (id))
 ;
@@ -44,6 +46,8 @@ create table word (
   thai                      varchar(255),
   lanna                     varchar(255),
   link                      varchar(255),
+  romanbali                 varchar(255),
+  thaibali                  varchar(255),
   constraint pk_word primary key (id))
 ;
 

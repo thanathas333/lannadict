@@ -18,6 +18,8 @@ public class Word extends Model {
     public String thai;
     public String lanna;
     public String link;
+    public String romanbali;
+    public String thaibali;
 
     public static Finder<Long,Word> finder = new Finder<Long, Word>(Long.class,Word.class);
 

@@ -29,6 +29,8 @@ public class Terminology extends Model {
     public String thai;
     public String lanna;
     public String link;
+    public String romanbali;
+    public String thaibali;
 
     //public int status_id;
     //public int user_id;
