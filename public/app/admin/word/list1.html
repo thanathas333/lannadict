@@ -15,17 +15,17 @@
                 <th>Lanna</th>
                 <th>Thai</th>
                 <th>Link</th>
-                <th>User</th>
+                <th>UserID</th>
                 <th>Comment</th>
                 <th>Control</th>
             </tr>
             </thead>
             <tr ng-repeat="terminology in terminologys">
                 <td>{{terminology.id}}</td>
-                <td>{{terminology.lanna}}</td>
+                <td><p class="lntilok"> {{terminology.lanna}} </p></td>
                 <td>{{terminology.thai}}</td>
                 <td>{{terminology.link}}</td>
-                <td>{{terminology.user.username}}</td>
+                <td>{{terminology.user.id}}</td>
                 <td>{{terminology.comment.comment}}</td>
                 <td>
                     <div class="dropdown">

@@ -29,6 +29,7 @@ public class TerminologyController extends Controller {
             terminology.update();
         }else {
             //terminology.user_id=
+
             terminology.save();
         }
 

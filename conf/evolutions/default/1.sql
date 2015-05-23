@@ -14,7 +14,6 @@ create table comment (
 create table status (
   id                        bigint auto_increment not null,
   name                      varchar(255),
-  description               varchar(255),
   constraint pk_status primary key (id))
 ;
 

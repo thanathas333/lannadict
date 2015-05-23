@@ -78,7 +78,7 @@ public class Application extends Controller {
         }else if (user.status.name.equals("admin")) {
             return redirect("/admin");
         }else {
-            return redirect("terminologyadd");
+            return redirect("/terminologyadd");
         }
 
     }

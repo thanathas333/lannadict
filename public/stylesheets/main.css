@@ -1,0 +1,7 @@
+@font-face {
+    font-family: "LN TILOK";
+    src: url("LN_TILOK_V1_57.TTF") format("truetype");
+}
+p.lntilok {
+    font-family: "LN TILOK", Verdana, Tahoma;
+}

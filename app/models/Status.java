@@ -16,7 +16,7 @@ public class Status extends Model {
     public Long id;
 
     public String name;
-    public String description;
+    //public String description;
 
     public static Finder<Long, Status> finder = new Finder<Long, Status>(Long.class, Status.class);
 
