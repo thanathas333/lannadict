@@ -24,13 +24,13 @@
             </thead>
             <tr ng-repeat="terminology in terminologys">
                 <td>{{terminology.id}}</td>
-                <td><p class="lntilok"> {{terminology.lanna}} </p></td>
+                <td><h2><p class="lntilok"> {{terminology.lanna}} </p></h2></td>
                 <td>{{terminology.thai}}</td>
                 <td>{{terminology.link}}</td>
                 <td>{{terminology.romanbali}}</td>
                 <td>{{terminology.thaibali}}</td>
                 <td>{{terminology.user.id}}</td>
-                <td>{{terminology.comment.comment}}</td>
+                <td>{{terminology.comment}}</td>
                 <td>
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
@@ -39,11 +39,6 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                            <li role="presentation">
-                                <a href="comment" role="menuitem" tabindex="-1">
-                                    <i class="glyphicon glyphicon-comment"></i> Comment
-                                </a>
-                            </li>
                             <li role="presentation">
                                 <a ui-sref="edit({id:terminology.id})" role="menuitem" tabindex="-1">
                                     <i class="glyphicon glyphicon-pencil"></i> Edit

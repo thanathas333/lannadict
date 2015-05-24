@@ -2,36 +2,65 @@
 
     <div ng-app="SearchApp" ng-controller="SearchCtrl">
 
-    <!--div class="thumbnail">
-        <img src="@routes.Assets.at("bootstrap-3.3.2-dist/img/2.jpg") " alt="">
-    </div-->
 
-    <carousel interval="5000" style="width: 535px; margin:auto;">
-        <slide style="margin:auto;">
-            <img src="@routes.Assets.at("bootstrap-3.3.2-dist/img/2.jpg") " alt="">
-        </slide>
-        <slide>
-            <img src="@routes.Assets.at("bootstrap-3.3.2-dist/img/2.jpg") " alt="">
-        </slide>
-    </carousel><br>
+        <carousel interval="5000" style="width : 535px ; margin : auto ;" ng-if="!firstSearch">
+            <slide style="margin : auto ;">
+                <img src="@routes.Assets.at("bootstrap-3.3.2-dist/img/2.jpg") " alt="">
+            </slide>
+            <slide>
+                <img src="@routes.Assets.at("bootstrap-3.3.2-dist/img/2.jpg") " alt="">
+            </slide>
+        </carousel><br>
 
-    <form class="form-horizontal" method="post" ng-submit="submitForm()">
-        <div class="form-group">
-            <label class="sr-only" for="exampleInputAmount">search</label>
-            <div class="input-group" style="margin : auto; width:65%">
-                <div class="input-group-addon">ค้นหา</div>
-                <input type="text" sy class="form-control" id="search" ng-model="search.search" placeholder="search ... ">
-                <span class="input-group-btn">
-                    <button class="btn btn-primary" type="submit">
-                        <i class="glyphicon glyphicon-search"></i> Search </button>
-                </span>
+        <form class="form-horizontal" method="post" ng-submit="submitForm()">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount">search</label>
+                <div class="input-group" style="margin : auto ; width : 65 %">
+                    <div class="input-group-addon">ค้นหา</div>
+                    <input type="text" class="form-control" id="search" ng-model="search.search" placeholder="search ... "/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="glyphicon glyphicon-search"></i> Search </button>
+                    </span>
+                </div>
             </div>
-    </form>
+        </form>
+
+
+        <carousel interval="5000" style="width : 1070px ; margin : auto ;" ng-if="firstSearch">
+        <div class="row">
+            <div class="col-lg-12">
+                    <!-- Table -->
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Lanna</th>
+                            <th>Thai</th>
+                            <th>Link</th>
+                            <th>Romanbali</th>
+                            <th>Thaibali</th>
+                        </tr>
+                    </thead>
+                    <tr ng-repeat="word in results">
+                        <td><h2><p class="lntilok">{{word.lanna}}</p></h2></td>
+                        <td>{{word.thai}}</td>
+                        <td>{{word.link}}</td>
+                        <td>{{word.romanbali}}</td>
+                        <td>{{word.thaibali}}</td>
+                    </tr>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        </carousel>
+
 
     </div>
 
 
-}{
+} {
     <script type="text/javascript" src="@routes.Assets.at("app/user/show/SearchsApp.js")"></script>
 }
 

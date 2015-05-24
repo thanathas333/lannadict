@@ -7,43 +7,44 @@
             <div class="control-group">
                 <label class="control-label" for="inputusername"> Username</label>
                 <div class="controls">
-                    <input ng-model="user.username" type="username" id="inputusername" placeholder="Username">
+                    <input ng-model="user.username" type="username" id="inputusername" placeholder="Username" required>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputpassword">Password</label>
                 <div class="controls">
-                    <input ng-model="user.password" type="password" id="inputpassword" placeholder="Password">
+                    <input ng-model="user.password" type="password" id="inputpassword" placeholder="Password" required>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputname"> name </label>
                 <div class="controls">
-                    <input ng-model="user.name" type="name" id="inputname" placeholder="Name">
+                    <input ng-model="user.name" type="name" id="inputname" placeholder="Name" required>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputsurname"> Surname </label>
                 <div class="controls">
-                    <input ng-model="user.surname" type="surname" id="inputsurname" placeholder="Surname">
+                    <input ng-model="user.surname" type="surname" id="inputsurname" placeholder="Surname" required>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputaddress"> Address </label>
                 <div class="controls">
-                    <input ng-model="user.address" type="address" id="inputaddress" placeholder="Address">
+                    <input ng-model="user.address" type="address" id="inputaddress" placeholder="Address" required>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputtel"> Tel </label>
                 <div class="controls">
-                    <input ng-model="user.tel" type="tel" id="inputtel" placeholder="Tel">
+                    <input ng-model="user.tel" type="tel" id="inputtel" placeholder="Tel" required>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="inputemail"> E-mail </label>
                 <div class="controls">
-                    <input ng-model="user.email" type="email" id="inputemail" placeholder="E-mail">
+                    <input ng-model="user.email" type="email" id="inputemail" placeholder="E-mail" data-error="Bruh, that email address is invalid" required>
+                    <div class="help-block with-errors"></div>
                 </div>
             </div>
 
@@ -66,7 +67,7 @@
     $scope.user = { };
 
     $scope.submitForm = function ( ) {
-    alert("Membership is pending requests within 24 hours.");
+    alert("Membership is pending requests with in 24 hours.");
     $http ( {
     url : '/user-add',
     method : 'post',

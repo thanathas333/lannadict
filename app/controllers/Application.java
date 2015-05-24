@@ -91,25 +91,11 @@ public class Application extends Controller {
         return ok(useraddword.render());
     }
 
-    public static Result statusaddword() {
-        return ok(statusaddword.render());
-    }
-
-    public static Result terminologystatus() {
-        return ok(terminologystatus.render());
-    }
 
     public static Result useraddform() {
         return ok(useraddform.render());
     }
 
-    public static Result terminologycom() {
-        return ok(terminologycom.render());
-    }
-
-    public static Result comment() {
-        return ok(comment.render());
-    }
 }
 
 

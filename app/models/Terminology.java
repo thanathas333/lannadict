@@ -41,6 +41,7 @@ public class Terminology extends Model {
     public User user;
 
 
+
     @OneToMany(cascade = CascadeType.ALL)
     public List<Comment> comments;
 
