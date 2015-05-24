@@ -1,4 +1,4 @@
-@layoutadmin() {
+@layoutuser() {
 
     <div ng-app="WordAddApp" ng-controller="WordAddCtrl">
         <h2>ป้อนคำศัพท์ใหม่ ( Augmernt Vocabulary )</h2>
@@ -21,7 +21,20 @@
                 <div class="controls">
                     <input ng-model="terminology.link" type="link" id="inputlink" placeholder="Link">
                 </div>
-            </div><br>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputromanbali">Romanbali</label>
+                <div class="controls">
+                    <input ng-model="word.romanbali" type="romanbali" id="inputromanbali" placeholder="Romanbali">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputthaibali">Thaibali</label>
+                <div class="controls">
+                    <input ng-model="word.thaibali" type="thaibali" id="inputthaibali" placeholder="Thaibali">
+                </div>
+            </div>
+            <br>
             ชื่อผู้เพิ่มคำศัพท์
             <select ng-model="terminology.user" ng-options="item as item.username for item in users track by item.id" class="form-control" >
             </select><br>

@@ -14,16 +14,21 @@
         <thead>
         <tr>
             <th>#</th>
-            <th>Comment</th>
-            <th>Terminology</th>
-            <th>User</th>
+            <th>Lanna</th>
+            <th>Thai</th>
+            <th>Link</th>
+            <th>Romanbali</th>
+            <th>Thaibali</th>
+            <th>Control</th>
         </tr>
         </thead>
-        <tr ng-repeat="comment in comments">
-            <td>{{comment.id}}</td>
-            <td>{{comment.comment}}</td>
-            <td>{{comment.terminology}}</td>
-            <td>{{comment.user}}</td>
+        <tr ng-repeat="word in words">
+            <td>{{word.id}}</td>
+            <td><p class="lntilok">{{word.lanna}}</p></td>
+            <td>{{word.thai}}</td>
+            <td>{{word.link}}</td>
+            <td>{{word.romanbali}}</td>
+            <td>{{word.thaibali}}</td>
             <td>
                 <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
