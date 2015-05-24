@@ -91,7 +91,6 @@ public class Application extends Controller {
         return ok(useraddword.render());
     }
 
-
     public static Result useraddform() {
         return ok(useraddform.render());
     }
