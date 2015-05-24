@@ -15,14 +15,12 @@ GET         /admins                        controllers.Application.admins()
 GET         /adminaudit                    controllers.Application.adminaudit()
 GET         /terminologyaudit              controllers.Application.terminologyaudit()
 GET         /terminologyadd                controllers.Application.terminologyadd()
-GET         /terminologystatus             controllers.Application.terminologystatus()
+
 GET         /users                         controllers.Application.users()
 
 GET         /useraddword                   controllers.Application.useraddword()
 GET         /statusaddword                 controllers.Application.statusaddword()
 GET         /useraddform                   controllers.Application.useraddform()
-GET         /terminologycom                controllers.Application.terminologycom()
-GET         /comment                       controllers.Application.comment()
 
 
 GET         /login                         controllers.Application.login()
