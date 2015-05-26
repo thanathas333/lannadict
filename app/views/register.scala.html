@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputtel"> เบื่อโทร/Tel </label>
+                <label class="control-label" for="inputtel"> เบอร์โทร/Tel </label>
                 <div class="controls">
                     <input ng-model="user.tel" type="tel" id="inputtel" placeholder="Tel" required>
                 </div>
@@ -69,8 +69,8 @@
     $scope.user = { };
 
     $scope.submitForm = function ( ) {
-    alert("Thank you, Registered Your information has been added to the database," +
-    " but not yet approved. Officials will review your information as soon as possible, thank you very much.");
+    alert("ขอบคุณที่สมัครสมาชิก ข้อมูลของคุณได้รับการเพิ่มฐานข้อมูลแล้วแต่ยังไม่ได้อนุมัติ " +
+    "เจ้าหน้าที่จะตรวจสอบข้อมูลของคุณโดยเร็วที่สุดเท่าที่เป็นไปได้ ขอบคุณมาก");
     $http ( {
     url : '/user-add',
     method : 'post',

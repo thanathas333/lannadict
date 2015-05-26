@@ -50,8 +50,8 @@
         $scope.user = {};
 
     $scope.submitForm = function ( ) {
-    alert("Thank you,Your contribution has been added to the dictionary database Lanna has not yet approved." +
-    " Officials will review your vocabulary as soon as possible, thank you very much.");
+    alert("ขอบคุณการเพิ่มข้อมูลคำศัพท์ของคุณได้รับการเพิ่มฐานข้อมูลพจนานุกรมล้านนาแล้ว แต่ยังไม่ได้อนุมัติ" +
+    " เจ้าหน้าที่ล้านนาจะทบทวนคำศัพท์ของคุณโดยเร็วที่สุดเท่าที่เป็นไปได้ ขอบคุณมาก.");
     $http ( {
     url : '/terminology-add',
     method : 'post',
