@@ -42,9 +42,6 @@ public class Terminology extends Model {
 
 
 
-    @OneToMany(cascade = CascadeType.ALL)
-    public List<Comment> comments;
-
     public static Finder<Long, Terminology> finder = new Finder<Long, Terminology>(Long.class, Terminology.class);
 
 

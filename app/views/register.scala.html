@@ -17,25 +17,25 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputname"> name </label>
+                <label class="control-label" for="inputname"> ชื่อ/name </label>
                 <div class="controls">
                     <input ng-model="user.name" type="name" id="inputname" placeholder="Name" required>
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputsurname"> Surname </label>
+                <label class="control-label" for="inputsurname"> นามสกุล/Surname </label>
                 <div class="controls">
                     <input ng-model="user.surname" type="surname" id="inputsurname" placeholder="Surname" required>
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputaddress"> Address </label>
+                <label class="control-label" for="inputaddress"> ที่อยู่/Address </label>
                 <div class="controls">
                     <input ng-model="user.address" type="address" id="inputaddress" placeholder="Address" required>
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputtel"> Tel </label>
+                <label class="control-label" for="inputtel"> เบื่อโทร/Tel </label>
                 <div class="controls">
                     <input ng-model="user.tel" type="tel" id="inputtel" placeholder="Tel" required>
                 </div>
@@ -48,11 +48,13 @@
                 </div>
             </div>
 
+            <br>
             <div class="control-group">
                 <div class="controls">
                     <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-open"></i>  ยืนยันการสมัครสมาชิก </button>
                 </div>
             </div>
+
 
 
         </form>
@@ -67,7 +69,8 @@
     $scope.user = { };
 
     $scope.submitForm = function ( ) {
-    alert("Membership is pending requests with in 24 hours.");
+    alert("Thank you, Registered Your information has been added to the database," +
+    " but not yet approved. Officials will review your information as soon as possible, thank you very much.");
     $http ( {
     url : '/user-add',
     method : 'post',

@@ -22,15 +22,15 @@
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputromanbali">Romanbali</label>
+                <label class="control-label" for="inputromanbali">บาลีโรมัน</label>
                 <div class="controls">
-                    <input ng-model="word.romanbali" type="romanbali" id="inputromanbali" placeholder="Romanbali">
+                    <input ng-model="terminology.romanbali" type="romanbali" id="inputromanbali" placeholder="Romanbali">
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="inputthaibali">Thaibali</label>
+                <label class="control-label" for="inputthaibali">บาลีไทย</label>
                 <div class="controls">
-                    <input ng-model="word.thaibali" type="thaibali" id="inputthaibali" placeholder="Thaibali">
+                    <input ng-model="terminology.thaibali" type="thaibali" id="inputthaibali" placeholder="Thaibali">
                 </div>
             </div>
             <div class="controls">
@@ -50,7 +50,8 @@
         $scope.user = {};
 
     $scope.submitForm = function ( ) {
-    alert("The petition is pending");
+    alert("Thank you,Your contribution has been added to the dictionary database Lanna has not yet approved." +
+    " Officials will review your vocabulary as soon as possible, thank you very much.");
     $http ( {
     url : '/terminology-add',
     method : 'post',
