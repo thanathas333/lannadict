@@ -42,10 +42,6 @@ public class Application extends Controller {
         return ok(search.render());
     }
 
-    public static Result add() {
-        return ok(add.render());
-    }
-
     public static Result register() {
         return ok(register.render());
     }
@@ -93,6 +89,10 @@ public class Application extends Controller {
 
     public static Result useraddform() {
         return ok(useraddform.render());
+    }
+
+    public static Result help() {
+        return ok(help.render());
     }
 
 }
