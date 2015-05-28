@@ -40,7 +40,8 @@ public class Terminology extends Model {
     @ManyToOne
     public User user;
 
-
+    @ManyToOne
+    public Comment comment;
 
     public static Finder<Long, Terminology> finder = new Finder<Long, Terminology>(Long.class, Terminology.class);
 

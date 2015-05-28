@@ -59,6 +59,14 @@ GET         /api/status/all                controllers.StatusController.getAll
 GET         /api/status/current            controllers.StatusController.getCurrent
 GET         /api/status/:id                controllers.StatusController.getById(id:Long)
 
+#comment
+POST        /api/comment/save              controllers.CommentController.postSave()
+POST        /api/comment/delete            controllers.CommentController.postDelete()
+GET         /api/comment/all               controllers.CommentController.getAll
+GET         /api/comment/current           controllers.CommentController.getCurrent
+GET         /api/comment/:id               controllers.CommentController.getById(id:Long)
+
+
 
 
 

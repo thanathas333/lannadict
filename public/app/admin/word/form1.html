@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="control-group">
-        <label class="control-label" for="inputlink">ลิงค์</label>
+        <label class="control-label" for="inputlink">ลิงค์(เพศของภาษา)</label>
         <div class="controls">
             <input ng-model="terminology.link" type="link" id="inputlink" placeholder="Link">
         </div>
@@ -31,7 +31,12 @@
             <input ng-model="terminology.thaibali" type="thaibali" id="inputthaibali" placeholder="Thaibali">
         </div>
     </div>
+    <div>
+        <br> Comment
+        <select ng-model="terminology.comment" ng-options="item as item.comment for item in comments track by item.id" class="form-control" >
+        </select>
 
+    </div>
     <p>
     <div class="control-group">
         <div class="controls">

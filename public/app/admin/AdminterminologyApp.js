@@ -79,6 +79,13 @@ app.controller('FormCtrl',function($scope,$http,$state,terminology){
 
     $scope.terminology = terminology.data;
 
+    $http({
+        url : '/api/comment/all',
+        method : 'get'
+    } ).success(function(response){
+        $scope.comments = response;
+    })
+
 
     $scope.submitForm = function(){
         $http ( {
