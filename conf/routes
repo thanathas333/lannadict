@@ -17,8 +17,10 @@ GET         /admins                        controllers.Application.admins()
 GET         /adminaudit                    controllers.Application.adminaudit()
 GET         /terminologyaudit              controllers.Application.terminologyaudit()
 GET         /terminologyadd                controllers.Application.terminologyadd()
+GET         /terminologyscreen             controllers.Application.terminologyscreen()
 
 GET         /users                         controllers.Application.users()
+GET         /usercomment                   controllers.Application.usercomment()
 
 GET         /useraddword                   controllers.Application.useraddword()
 GET         /useraddform                   controllers.Application.useraddform()

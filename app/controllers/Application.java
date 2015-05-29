@@ -95,6 +95,14 @@ public class Application extends Controller {
         return ok(help.render());
     }
 
+    public static Result usercomment() {
+        return ok(usercomment.render());
+    }
+
+    public static Result terminologyscreen() {
+        return ok(terminologyscreen.render());
+    }
+
 }
 
 
