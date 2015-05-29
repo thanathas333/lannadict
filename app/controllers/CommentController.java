@@ -25,12 +25,6 @@ public class CommentController extends Controller {
         JsonNode json = request().body().asJson();
         models.Comment comment = Json.fromJson(json, models.Comment.class);
 
-        String uid = session().get("user_id");
-        Long user_id = Long.valueOf(uid);
-        User user = User.finder.byId(user_id);
-        comment.user = user;
-
-
         if(comment.id != null){
             comment.update();
         }else {

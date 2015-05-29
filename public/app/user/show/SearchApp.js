@@ -7,16 +7,16 @@ var app = angular.module("SearchApp",[]);
 app.controller('SearchCtrl',function($scope,$http){
     console.log("SearchCtrl...");
 
-    $scope.search = {};
+    $scope.searches = {};
     $scope.results = [];
 
     $scope.submitForm = function(){
         console.log("submit...");
 
         $http({
-            url : "/search",
+            url : "/searches",
             method : 'post',
-            data : $scope.search
+            data : $scope.searches
         } ).success(function(response){
             $scope.results = response;
         })

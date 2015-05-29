@@ -11,6 +11,9 @@ GET         /about                         controllers.Application.about()
 GET         /search                        controllers.Application.search()
 POST        /search                        controllers.SearchController.postSearch()
 
+POST        /search                        controllers.SearchesController.postSearches()
+
+
 GET         /register                      controllers.Application.register()
 GET         /admin                         controllers.Application.admin()
 GET         /admins                        controllers.Application.admins()
@@ -33,6 +36,9 @@ GET         /logout                        controllers.LogController.logout()
 POST        /logout                        controllers.LogController.logout()
 
 GET         /help                          controllers.Application.help()
+GET         /admincomment                  controllers.Application.admincomment()
+GET         /terminologycomment            controllers.Application.terminologycomment()
+
 
 
 
@@ -48,11 +54,18 @@ POST        /api/word/delete               controllers.WordController.postDelete
 POST        /api/terminology/save          controllers.TerminologyController.postSave()
 POST        /api/terminology/delete        controllers.TerminologyController.postDelete()
 GET         /api/terminology/:id           controllers.TerminologyController.getById(id: Long)
+GET         /api/terminology/all           controllers.TerminologyController.getAll
+
 
 
 
 #search
 POST        /api/search/all                controllers.SearchController.postSearch()
+
+#searches
+POST        /api/searches/all              controllers.SearchesController.postSearches()
+
+
 
 #status
 POST        /api/status/save               controllers.StatusController.postSave()
@@ -97,3 +110,5 @@ GET         /get-users                     controllers.UserController.getAllUser
 POST        /terminology-add               controllers.TerminologyController.postSave()
 POST        /terminology-status            controllers.TerminologyController.postSave()
 GET         /get-terminologys              controllers.TerminologyController.getAllTerminologys
+POST        /comment-add                   controllers.CommentController.postSave()
+

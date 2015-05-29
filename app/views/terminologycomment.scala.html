@@ -1,0 +1,49 @@
+@layoutterminology() {
+
+    <div ng-app="CommentAddApp" ng-controller="CommentAddCtrl">
+        <h1>เพิ่มคอมเม้น ( Comment )</h1>
+
+        <form class="form-horizontal" ng-submit="submitForm()">
+            <div class="control-group">
+                <label class="control-label" for="inputcomment"> สร้างความคิดเห็น / Comment</label>
+                <div class="controls">
+                    <input ng-model="comment.comment" type="comment" id="inputcomment" placeholder="Comment">
+                </div>
+            </div>
+            <br>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-open"></i> เพิ่มคอมเม้น Comment </button>
+                </div>
+            </div>
+
+
+
+        </form>
+
+    </div>
+} {
+    <script type="text/javascript">
+
+    var app = angular.module("CommentAddApp",[ ] ) ;
+
+    app.controller( 'CommentAddCtrl', function ( $scope, $http ) {
+    $scope.comment= { };
+
+    $scope.submitForm = function ( ) {
+    alert("เพิ่มความคิดเห็นเรียบร้อยแล้ว");
+    $http ( {
+    url : '/comment-add',
+    method : 'post',
+    data : $scope.comment
+    } ).success ( function ( response ) {
+    $scope.comments = response;
+    $scope.comment = {}
+
+    } )
+
+    }
+    } ) ;
+    </script>
+
+}

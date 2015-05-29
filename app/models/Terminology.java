@@ -31,6 +31,7 @@ public class Terminology extends Model {
     public String link;
     public String romanbali;
     public String thaibali;
+    public String name;
 
     //public int status_id;
     //public int user_id;
@@ -40,7 +41,7 @@ public class Terminology extends Model {
     @ManyToOne
     public User user;
 
-    @OneToOne
+    @ManyToOne
     public Comment comment;
 
     public static Finder<Long, Terminology> finder = new Finder<Long, Terminology>(Long.class, Terminology.class);

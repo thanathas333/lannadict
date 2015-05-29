@@ -23,6 +23,7 @@ create table terminology (
   link                      varchar(255),
   romanbali                 varchar(255),
   thaibali                  varchar(255),
+  name                      varchar(255),
   user_id                   bigint,
   comment_id                bigint,
   constraint pk_terminology primary key (id))

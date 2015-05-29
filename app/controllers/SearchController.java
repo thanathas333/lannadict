@@ -1,6 +1,7 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import models.Terminology;
 import models.Word;
 import play.*;
 import play.data.DynamicForm;
@@ -29,5 +30,6 @@ public class SearchController extends Controller {
     private static List<Word> search(String str){
         return Word.finder.where().ilike("thai",str).findList();
     }
+
 
 }

@@ -32,12 +32,6 @@ public class TerminologyController extends Controller {
         User user = User.finder.byId(user_id);
         terminology.user = user;
 
-        String cid = session().get("comment_id");
-        Long comment_id = Long.valueOf(cid);
-        Comment comment = Comment.finder.byId(comment_id);
-        terminology.comment = comment;
-
-
         if(terminology.id != null){
             terminology.update();
         }else {
@@ -56,5 +50,11 @@ public class TerminologyController extends Controller {
 
         return ok(Json.toJson(terminology));
     }
+
+
+    public static Result getAll(){
+        return ok(Json.toJson(Terminology.finder.all()));
+    }
+
 
 }

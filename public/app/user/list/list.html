@@ -1,0 +1,27 @@
+<h1>รายการ</h1>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Table -->
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ลำดับ</th>
+                    <th>ภาษาไทย</th>
+                    <th>Comment</th>
+                    <th>ชื่อผู้คอมเม้น</th>
+                </tr>
+                </thead>
+                <tr ng-repeat="terminology in terminologys">
+                    <td>{{terminology.id}}</td>
+                    <td>{{terminology.thai}}</td>
+                    <td>{{terminology.comment.comment}}</td>
+                    <td>{{terminology.name}}</td>
+                </tr>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
