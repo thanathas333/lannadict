@@ -27,6 +27,8 @@ public class User extends Model {
     public Status status;
 
 
+
+
     public static Finder<Long, User> finder = new Finder<Long, User>(Long.class, User.class);
 }
 

@@ -1,6 +1,7 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import models.Comment;
 import models.Terminology;
 import models.User;
 import models.Word;
@@ -30,6 +31,12 @@ public class TerminologyController extends Controller {
         Long user_id = Long.valueOf(uid);
         User user = User.finder.byId(user_id);
         terminology.user = user;
+
+        String cid = session().get("comment_id");
+        Long comment_id = Long.valueOf(cid);
+        Comment comment = Comment.finder.byId(comment_id);
+        terminology.comment = comment;
+
 
         if(terminology.id != null){
             terminology.update();

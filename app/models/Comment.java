@@ -18,6 +18,8 @@ public class Comment extends Model {
 
     public String comment;
 
+    @ManyToOne
+    public User user;
 
 
     public static Finder<Long, Comment> finder = new Finder<Long, Comment>(Long.class, Comment.class);

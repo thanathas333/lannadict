@@ -6,6 +6,7 @@
 create table comment (
   id                        bigint auto_increment not null,
   comment                   varchar(255),
+  user_id                   bigint,
   constraint pk_comment primary key (id))
 ;
 
@@ -50,12 +51,14 @@ create table word (
   constraint pk_word primary key (id))
 ;
 
-alter table terminology add constraint fk_terminology_user_1 foreign key (user_id) references user (id) on delete restrict on update restrict;
-create index ix_terminology_user_1 on terminology (user_id);
-alter table terminology add constraint fk_terminology_comment_2 foreign key (comment_id) references comment (id) on delete restrict on update restrict;
-create index ix_terminology_comment_2 on terminology (comment_id);
-alter table user add constraint fk_user_status_3 foreign key (status_id) references status (id) on delete restrict on update restrict;
-create index ix_user_status_3 on user (status_id);
+alter table comment add constraint fk_comment_user_1 foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_comment_user_1 on comment (user_id);
+alter table terminology add constraint fk_terminology_user_2 foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_terminology_user_2 on terminology (user_id);
+alter table terminology add constraint fk_terminology_comment_3 foreign key (comment_id) references comment (id) on delete restrict on update restrict;
+create index ix_terminology_comment_3 on terminology (comment_id);
+alter table user add constraint fk_user_status_4 foreign key (status_id) references status (id) on delete restrict on update restrict;
+create index ix_user_status_4 on user (status_id);
 
 
 
