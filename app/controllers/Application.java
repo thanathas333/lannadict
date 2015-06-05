@@ -110,6 +110,10 @@ public class Application extends Controller {
     public static Result admincomment() {
         return ok(admincomment.render());
     }
+    public static Result translatethai() {
+        return ok(translatethai.render());
+    }
+
 
 }
 

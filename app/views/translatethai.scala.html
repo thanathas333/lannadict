@@ -1,0 +1,55 @@
+@layout() {
+
+    <div ng-app="UserAddApp" ng-controller="UserAddCtrl">
+
+
+                <img src="@routes.Assets.at("bootstrap-3.3.2-dist/img/6.jpg") " alt="">
+
+        <br>
+
+        <form class="form-horizontal" ng-submit="submitForm()">
+        <div class="control-group">
+            <label class="control-label" for="inputthai">ภาษาไทย</label>
+            <div class="controls">
+                <h2><p><input ng-model="terminology.thai" type="thai" id="inputthai" placeholder=""></p></h2>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="inputthai">ล้านนา</label>
+            <div class="controls">
+                <h2><p class="lntilok"> <input ng-model="terminology.thai" type="thai" id="inputthai" placeholder=""></p></h2>
+            </div>
+        </div>
+
+        </form>
+
+        <br>
+        <center>ใช้สำหรับแปลภาษาไทยให้เป็นภาษาล้านนา ความถูกต้องมีประมาณ 60% จากคำศัพท์ 100คำ </center>
+
+    </div>
+
+
+} {
+    <script type="text/javascript">
+
+    var app = angular.module("UserAddApp",[ ] ) ;
+
+    app.controller( 'UserAddCtrl', function ( $scope, $http ) {
+    $scope.terminology = { };
+
+    $scope.submitForm = function ( ) {
+    $http ( {
+    url : '/terminology-add',
+    method : 'post',
+    data : $scope.terminology
+    } ).success ( function ( response ) {
+    $scope.terminologys = response;
+    $scope.terminology = {}
+
+    } )
+
+    }
+    } ) ;
+    </script>
+}
+

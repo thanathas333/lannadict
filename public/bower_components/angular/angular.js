@@ -6728,7 +6728,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
 
         this[key] = value;
 
-        // translate normalized key to actual key
+        // translatethai normalized key to actual key
         if (attrName) {
           this.$attr[key] = attrName;
         } else {
@@ -18444,7 +18444,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
  * # Submitting a form and preventing the default action
  *
  * Since the role of forms in client-side Angular applications is different than in classical
- * roundtrip apps, it is desirable for the browser not to translate the form submission into a full
+ * roundtrip apps, it is desirable for the browser not to translatethai the form submission into a full
  * page reload that sends the data to the server. Instead some javascript logic should be triggered
  * to handle the form submission in an application-specific way.
  *

@@ -1,0 +1,52 @@
+<h1>เพิ่มคำศัพท์</h1>
+
+<form class="form-horizontal" ng-submit="submitForm()">
+    <div class="control-group">
+        <label class="control-label" for="inputthai">ภาษาไทย</label>
+        <div class="controls">
+            <input ng-model="terminology.thai" type="thai" id="inputthai" placeholder="Thai">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputlink">ลิงค์(เพศของภาษา)</label>
+        <div class="controls">
+            <input ng-model="terminology.link" type="link" id="inputlink" placeholder="Link">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputromanbali">บาลีโรมัน</label>
+        <div class="controls">
+            <input ng-model="terminology.romanbali" type="romanbali" id="inputromanbali" placeholder="Romanbali">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputthaibali">บาลีไทย</label>
+        <div class="controls">
+            <input ng-model="terminology.thaibali" type="thaibali" id="inputthaibali" placeholder="Thaibali">
+        </div>
+    </div>
+    <div>
+        <br> Comment
+        <select ng-model="terminology.comment" ng-options="item as item.comment for item in comments track by item.id" class="form-control" >
+        </select>
+
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputname"> ลงชื่อผู้คอมเม้น </label>
+        <div class="controls">
+            <input ng-model="terminology.name" type="name" id="inputname" placeholder="Name">
+        </div>
+    </div>
+
+    <p>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-open"></i>  ตกลง </button>
+            <button ui-sref="list1" type="button" class="btn btn-default">ยกเลิก</button>
+        </div>
+    </div>
+    </p>
+
+</form>
+
+

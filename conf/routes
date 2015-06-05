@@ -38,6 +38,9 @@ POST        /logout                        controllers.LogController.logout()
 GET         /help                          controllers.Application.help()
 GET         /admincomment                  controllers.Application.admincomment()
 GET         /terminologycomment            controllers.Application.terminologycomment()
+GET         /translatethai                 controllers.Application.translatethai()
+
+
 
 
 
