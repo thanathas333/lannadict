@@ -1,7 +1,6 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import models.Comment;
 import models.Terminology;
 import models.User;
 import models.Word;

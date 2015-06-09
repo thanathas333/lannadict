@@ -3,13 +3,6 @@
 
 # --- !Ups
 
-create table comment (
-  id                        bigint auto_increment not null,
-  comment                   varchar(255),
-  user_id                   bigint,
-  constraint pk_comment primary key (id))
-;
-
 create table status (
   id                        bigint auto_increment not null,
   name                      varchar(255),
@@ -23,9 +16,8 @@ create table terminology (
   link                      varchar(255),
   romanbali                 varchar(255),
   thaibali                  varchar(255),
-  name                      varchar(255),
+  comment                   varchar(255),
   user_id                   bigint,
-  comment_id                bigint,
   constraint pk_terminology primary key (id))
 ;
 
@@ -34,6 +26,7 @@ create table user (
   username                  varchar(255),
   password                  varchar(255),
   name                      varchar(255),
+  firstname                 varchar(255),
   surname                   varchar(255),
   address                   varchar(255),
   tel                       varchar(255),
@@ -52,22 +45,16 @@ create table word (
   constraint pk_word primary key (id))
 ;
 
-alter table comment add constraint fk_comment_user_1 foreign key (user_id) references user (id) on delete restrict on update restrict;
-create index ix_comment_user_1 on comment (user_id);
-alter table terminology add constraint fk_terminology_user_2 foreign key (user_id) references user (id) on delete restrict on update restrict;
-create index ix_terminology_user_2 on terminology (user_id);
-alter table terminology add constraint fk_terminology_comment_3 foreign key (comment_id) references comment (id) on delete restrict on update restrict;
-create index ix_terminology_comment_3 on terminology (comment_id);
-alter table user add constraint fk_user_status_4 foreign key (status_id) references status (id) on delete restrict on update restrict;
-create index ix_user_status_4 on user (status_id);
+alter table terminology add constraint fk_terminology_user_1 foreign key (user_id) references user (id) on delete restrict on update restrict;
+create index ix_terminology_user_1 on terminology (user_id);
+alter table user add constraint fk_user_status_2 foreign key (status_id) references status (id) on delete restrict on update restrict;
+create index ix_user_status_2 on user (status_id);
 
 
 
 # --- !Downs
 
 SET FOREIGN_KEY_CHECKS=0;
-
-drop table comment;
 
 drop table status;
 
