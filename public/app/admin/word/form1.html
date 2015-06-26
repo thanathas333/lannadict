@@ -31,16 +31,10 @@
             <input ng-model="terminology.thaibali" type="thaibali" id="inputthaibali" placeholder="Thaibali">
         </div>
     </div>
-    <div>
-        <br> Comment
-        <select ng-model="terminology.comment" ng-options="item as item.comment for item in comments track by item.id" class="form-control" >
-        </select>
-
-    </div>
     <div class="control-group">
-        <label class="control-label" for="inputname"> ลงชื่อผู้คอมเม้น </label>
+        <label class="control-label" for="inputcomment">ความคิดเห็น</label>
         <div class="controls">
-            <input ng-model="terminology.name" type="name" id="inputname" placeholder="Name">
+            <input ng-model="terminology.comment" type="comment" id="inputcomment" placeholder="Comment">
         </div>
     </div>
 

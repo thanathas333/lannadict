@@ -18,8 +18,9 @@
                 <th>ลิงค์</th>
                 <th>บาลีโรมัน</th>
                 <th>บาลีไทย</th>
-                <th>UserID</th>
-                <th>Comment</th>
+                <th>ผู้ตรวจสอบ</th>
+                <th>สถานะ</th>
+                <th>ความคิดเห็น</th>
                 <th>Control</th>
             </tr>
             </thead>
@@ -30,8 +31,9 @@
                 <td>{{terminology.link}}</td>
                 <td>{{terminology.romanbali}}</td>
                 <td>{{terminology.thaibali}}</td>
-                <td>{{terminology.user.id}}</td>
-                <td>{{terminology.comment.comment}}</td>
+                <td>{{terminology.user.firstname}}</td>
+                <td>{{terminology.user.status.name}}</td>
+                <td>{{terminology.comment}}</td>
                 <td>
                     <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
