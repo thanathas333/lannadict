@@ -7,21 +7,26 @@
                 <thead>
                 <tr>
                     <th>ลำดับ</th>
+                    <th>ภาษาล้านนา</th>
                     <th>ภาษาไทย</th>
-                    <th>Comment</th>
-                    <th>ชื่อผู้คอมเม้น</th>
+                    <th>ความคิดเห็น</th>
+                    <th>ชื่อผู้แก้ไข/เพิ่ม</th>
+                    <th>สถานะผู้แก้ไข/เพิ่ม</th>
                 </tr>
                 </thead>
                 <tr ng-repeat="terminology in terminologys">
                     <td>{{terminology.id}}</td>
+                    <td><h2><p class="lntilok"> {{terminology.lanna}} </p></h2></td>
                     <td>{{terminology.thai}}</td>
-                    <td>{{terminology.comment.comment}}</td>
-                    <td>{{terminology.name}}</td>
+                    <td>{{terminology.comment}}</td>
+                    <td>{{terminology.user.firstname}}</td>
+                    <td>{{terminology.user.status.name}}</td>
                 </tr>
                 <tbody>
 
                 </tbody>
             </table>
+
         </div>
     </div>
 
