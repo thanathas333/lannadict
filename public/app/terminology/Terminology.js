@@ -46,7 +46,7 @@ TerminologyApp.config(function ($stateProvider, $urlRouterProvider) {
         })
 });
 
-TerminologyApp.controller('ListCtrl', function ($scope, $http,words) {
+TerminologyApp.controller('ListCtrl', function ($scope, $http,words,$timeout) {
     console.log("ListCtrl...");
     $scope.words = words.data;
 
@@ -62,6 +62,11 @@ TerminologyApp.controller('ListCtrl', function ($scope, $http,words) {
             } )
         }
     }
+
+    $timeout(function(){
+        $("#listUser").dataTable();
+    },100)
+
 
 });
 

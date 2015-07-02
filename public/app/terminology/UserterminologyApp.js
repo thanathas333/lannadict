@@ -72,10 +72,14 @@ app.controller('ListCtrl', function ($scope, $http,terminologys) {
         }
     }
 
+    $timeout(function(){
+        $("#listUser").dataTable();
+    },100)
+
 
 });
 
-app.controller('FormCtrl',function($scope,$http,$state,terminology){
+app.controller('FormCtrl',function($scope,$http,$state,terminology,$timeout){
 
     $scope.terminology = terminology.data;
 

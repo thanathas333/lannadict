@@ -67,10 +67,14 @@ app.controller('ListCtrl', function ($scope, $http,words) {
         }
     }
 
+    $timeout(function(){
+        $("#listUser").dataTable();
+    },100)
+
 
 });
 
-app.controller('FormCtrl',function($scope,$http,$state,word){
+app.controller('FormCtrl',function($scope,$http,$state,word,$timeout){
 
     $scope.word = word.data;
 

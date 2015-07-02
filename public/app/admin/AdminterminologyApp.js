@@ -54,7 +54,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 });
 
-app.controller('ListCtrl', function ($scope, $http,terminologys) {
+app.controller('ListCtrl', function ($scope, $http,terminologys,$timeout) {
     console.log("ListCtrl...");
     console.log(terminologys);
     $scope.terminologys = terminologys.data;
@@ -72,6 +72,9 @@ app.controller('ListCtrl', function ($scope, $http,terminologys) {
         }
     }
 
+    $timeout(function(){
+        $("#listUser").dataTable();
+    },100)
 
 });
 

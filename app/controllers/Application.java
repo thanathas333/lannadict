@@ -103,10 +103,6 @@ public class Application extends Controller {
         return ok(terminologyscreen.render());
     }
 
-    public static Result terminologycomment() {
-        return ok(terminologycomment.render());
-    }
-
     public static Result admincomment() {
         return ok(admincomment.render());
     }

@@ -2,7 +2,6 @@
  * Created by ZAM on 2/4/2015.
  */
 
-
 var app = angular.module("AdminApp", ['ui.router']);
 
 app.config(function ($stateProvider, $urlRouterProvider) {
@@ -54,7 +53,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 });
 
-app.controller('ListCtrl', function ($scope, $http,users) {
+app.controller('ListCtrl', function ($scope, $http,users,$timeout) {
     console.log("ListCtrl...");
     console.log(users);
     $scope.users = users.data;
@@ -71,6 +70,10 @@ app.controller('ListCtrl', function ($scope, $http,users) {
             } )
         }
     }
+
+    $timeout(function(){
+        $("#listUser").dataTable();
+    },100)
 
 
 });
